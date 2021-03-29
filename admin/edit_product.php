@@ -96,8 +96,8 @@ include 'header.php'; ?>
                     <div class="form-group">
                         <label>Status</label>
                         <select class="form-control" name="product_status">
-                            <option <?php if($row['product_status'] == '1') echo 'selected'; ?> value="1">Avalable</option>
-                            <option <?php if($row['product_status'] == '0') echo 'selected'; ?> value="0">Out Of Stock</option>
+                            <option <?php if($row['product_status'] == '1') echo 'selected'; ?> value="1">Published</option>
+                            <option <?php if($row['product_status'] == '0') echo 'selected'; ?> value="0">Draft</option>
                         </select>
                     </div>
                     <div class="form-group">

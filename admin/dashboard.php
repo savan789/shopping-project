@@ -4,11 +4,11 @@ include 'header.php'; ?>
     <div class="admin-content-container">
 
 <!-- Background  css -->
-<div class="background_css">
+
     <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
-</div>
+
 
         <h2 class="admin-heading">Dashboard</h2>
         <div class="row">
