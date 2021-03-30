@@ -37,7 +37,21 @@ if(count($single_product) > 0){
                 <div class="col-md-5">
                     <div class="product-content">
                         <h3 class="title"><?php echo $row['product_title']; ?></h3>
-                        <span class="price"><?php echo $cur_format; ?>  <?php echo $row['product_price']; ?></span>
+                        <span class="price"><?php echo $cur_format; ?> <?php echo $row['product_price']; ?></span>
+                     
+                        <p>
+                        <?php
+                        // if(isset($_POST['product_price']))
+                        // {
+                        //     $total = $_POST['product_price'];
+                        //     $profit = $_POST['product_price'] +5;
+                        //     echo 'NGO:'. $profit; 
+                        // }
+                        ?>
+                        
+                        </p>                        
+
+
                         <p class="description"><?php echo html_entity_decode($row['product_desc']); ?></p>
                         <a class="add-to-cart" data-id="<?php echo $row['product_id']; ?>" href="">Add to cart</a>
                         <a class="add-to-wishlist" data-id="<?php echo $row['product_id']; ?>" href="">Add to Wislist</a>

@@ -94,7 +94,7 @@ ul{
 /* ========================= */
 
 #admin-header{
-    background: linear-gradient(to bottom, #e7e7e7, #f5f5f5);
+    background: linear-gradient(to bottom, #777272, #f5f5f5);
     padding: 15px 0 12px;
     box-shadow: 0 0 30px rgba(0,0,0,0.15);
     position: relative;
@@ -130,7 +130,7 @@ ul{
 
 #admin-header .logout:hover{
     background-color: #333;
-    box-shadow: 0 0 5px #333;
+    box-shadow: 0 0 5px rgb(63, 63, 63);
 }
 
 /* admin wrapper css */
@@ -151,6 +151,7 @@ ul{
     /* #f86f2d [original color]*/
     padding: 20px 10px;
     min-height: 700px;
+    
     
     
 }

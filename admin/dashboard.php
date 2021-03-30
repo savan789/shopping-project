@@ -5,9 +5,9 @@ include 'header.php'; ?>
 
 <!-- Background  css -->
 
-    <!-- <div class="bg"></div>
+    <div class="bg"></div>
 <div class="bg bg2"></div>
-<div class="bg bg3"></div> -->
+<div class="bg bg3"></div>
 
 
         <h2 class="admin-heading">Dashboard</h2>
