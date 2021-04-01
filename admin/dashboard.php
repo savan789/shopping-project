@@ -41,6 +41,7 @@ include 'header.php'; ?>
                 ?>
                 <div class="detail-box">
                 <a href="products.php">
+                <img src="images/package" height="100" width="100px">
                     <span class="count"><?php echo $products[0]['p_count']; ?></span>
                     <span class="count-tag">Products</span></a>
                 </div>
@@ -53,6 +54,7 @@ include 'header.php'; ?>
                 ?>
                 <div class="detail-box">
                 <a href="category.php">
+                <img src="images/categories" height="100" width="100px">
                     <span class="count"><?php echo $category[0]['c_count']; ?></span>
                     <span class="count-tag">Categories</span></a>
                 </div>
@@ -65,6 +67,7 @@ include 'header.php'; ?>
                         $sub_category = $db->getResult();
                     ?>
                     <a href="sub_category.php">
+                    <img src="images/subcategories" height="100" width="100px">
                     <span class="count"><?php echo $sub_category[0]['sub_count']; ?></span>
                     <span class="count-tag">Sub Categories</span>
                     </a>
@@ -78,6 +81,7 @@ include 'header.php'; ?>
                         $brands = $db->getResult();
                     ?>
                     <a href="brands.php">
+                    <img src="images/brand" height="100" width="100px">
                     <span class="count"><?php echo $brands[0]['b_count']; ?></span>
                     <span class="count-tag">Brands</span>
                                 </a>
@@ -91,6 +95,7 @@ include 'header.php'; ?>
                         $orders = $db->getResult();
                     ?>
                     <a href="orders.php">
+                    <img src="images/order" height="100" width="100px">
                     <span class="count"><?php echo $orders[0]['o_count']; ?></span>
                     <span class="count-tag">Orders</span>
                                 </a>
@@ -104,6 +109,7 @@ include 'header.php'; ?>
                         $users = $db->getResult();
                     ?>
                     <a href="users.php">
+                    <img src="images/users" height="100" width="100px">
                     <span class="count"><?php echo $users[0]['u_count']; ?></span>
                     <span class="count-tag">Users</span>
                                 </a>

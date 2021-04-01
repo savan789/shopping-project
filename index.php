@@ -15,6 +15,10 @@ include 'header.php'; ?>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+
+<!-- try background -->
+
+
                 <div class="banner-content ">
                     <div class="banner-carousel owl-carousel owl-theme">
                         <div class="item">
@@ -24,6 +28,7 @@ include 'header.php'; ?>
                             <img src="images/banner-img-1.jpg" alt=""/>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

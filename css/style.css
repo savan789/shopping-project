@@ -81,7 +81,7 @@ ul{
     font-weight: 600;
     text-transform: capitalize;
     color: #fff;
-    background-color: #f86f2d;
+    background-color: #ff6f69;
     transition: all 0.3s;
 }
 
@@ -195,7 +195,7 @@ ul{
 
 #admin-content .add-new{
     color: #fff;
-    background-color: #f86f2d;
+    background-color: #ff6f69;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
@@ -545,7 +545,7 @@ ul{
     font-weight: 600;
     text-transform: capitalize;
     color: #fff;
-    background-color: #f86f2d;
+    background-color: #ff6f69;
     border-radius:20px;
     margin: 0 0 20px;
     transition:all 0.3s;
@@ -561,7 +561,7 @@ ul{
     color: #000;
 }
 .customer_login span a{
-    color: #f86f2d;
+    color: #ff6f69;
     transition: all 0.3s ease 0s;
 }
 .customer_login span a:hover{
@@ -620,7 +620,7 @@ ul{
     font-weight: 600;
     text-transform: capitalize;
     color: #fff;
-    background-color: #f86f2d;
+    background-color: #ff6f69;
     border-radius:20px;
     transition:all 0.3s;
 }
