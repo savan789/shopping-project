@@ -1,10 +1,11 @@
 <?php
 // include header file
 include 'header.php'; ?>
+
+
+
     <div class="admin-content-container">
-
 <!-- Background  css -->
-
     <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
@@ -13,7 +14,21 @@ include 'header.php'; ?>
         <h2 class="admin-heading">Dashboard</h2>
         <div class="row">
             <div class="col-md-12">
-                <?php
+
+        <div class="chart">
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+              <?php
                     $db = new Database();
                     $db->select('products','product_id',null,'qty < 1',null,0);
                     $qty = $db->getResult();
@@ -32,7 +47,13 @@ include 'header.php'; ?>
                             </tbody>
                         </table>
                     <?php } ?>
-            </div>
+            </div> 
+
+
+
+
+
+
             <div class="col-md-4">
                 <?php
                     $db = new Database();

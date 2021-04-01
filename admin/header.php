@@ -42,7 +42,7 @@
                             <a href="dashboard.php" class="logo"><?php echo $result[0]['site_name']; ?></a>
                         <?php } ?>
                     </div>
-                    <div class="col-md-offset-8 col-md-2">
+                    <div class="col-md-offset-8 col-lg-offset-8 col-sm-offset-8 col-xs-offset-8 col-md-2">
                         <div class="dropdown">
                             <a href="" class="dropdown-toggle logout" data-toggle="dropdown">
                                 <?php
