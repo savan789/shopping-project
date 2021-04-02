@@ -370,6 +370,12 @@ ul{
     text-align: center;
 }
 
+.chart
+{
+    padding: 10px 10px 40px;
+    margin: 0 auto;
+}
+
 
 /*===================*/
 /*PUBLIC VIEW CSS START*/
@@ -902,9 +908,16 @@ ul{
     margin: 0 0 10px;
 }
 .single-product-container .product-content .price{
-    font-size: 23px;
+    font-size: 30px;
     margin: 0 0 5px;
+    color:red;
 }
+
+.single-product-container .product-content .price_donat{
+    font-size: 20px;
+    color:green;
+}
+
 .single-product-container .product-content .description{
     font-size: 15px;
     margin: 0 0 20px;

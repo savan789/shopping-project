@@ -9,48 +9,57 @@ include 'header.php'; ?>
     <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
-
-
-        <h2 class="admin-heading">Dashboard</h2>
+                                                                                                                          
+<!-- 
+        <h2 class="admin-heading">Dashboard</h2> -->
         <div class="row">
             <div class="col-md-12">
-
-        <div class="chart">
-
+<!-- cahrt -->
 
 
-        </div>
+    <script src="js/chart.js"></script>
+  <div class="chart"> 
+      <canvas id="myChart" width="800" height="500"></canvas>
 
 
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+         labels: ['NUmber of '],
+         datasets:
+         [
+                {
+                data: [22,0],
+                label:"user",
+                backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'],
+                     borderColor: [
+                    'rgba(255, 99, 132, 1)'],
+                         borderWidth: 5
+                },
 
+                {
+                data: [41, 0],
+                label:"order",
+                backgroundColor: [
+                'rgba(255, 206, 86, 0.2)',],   
+                     borderColor: [
+                        'rgba(255, 206, 86, 1)'],
+                          borderWidth: 5                
+                }
+        ]
+        },
+        // options:{
+        //     responsive:false,
+        // }
+    });
+    </script>
+</div>
 
-
-
-
-
-              <?php
-                    $db = new Database();
-                    $db->select('products','product_id',null,'qty < 1',null,0);
-                    $qty = $db->getResult();
-                    if(!empty($qty)){  ?>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr class="active"><td colspan="2">OUT OF Stock</td></tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach($qty as $q){ ?>
-                                    <tr>
-                                    <td>Product Code</td>
-                                    <td><?php echo 'PDR00'.$q['product_id']; ?></td>
-                                </tr>
-                        <?php } ?>
-                            </tbody>
-                        </table>
-                    <?php } ?>
-            </div> 
-
-
-
+<!-- chart bottam part -->
+           
 
 
 

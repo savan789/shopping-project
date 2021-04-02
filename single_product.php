@@ -39,17 +39,18 @@ if(count($single_product) > 0){
                         <h3 class="title"><?php echo $row['product_title']; ?></h3>
                         <span class="price"><?php echo $cur_format; ?> <?php echo $row['product_price']; ?></span>
                      
-                        <p>
+                     <!--NGO DONAT-->
+                <span class="price_donat">
+                    <br>
                         <?php
-                        // if(isset($_POST['product_price']))
-                        // {
-                        //     $total = $_POST['product_price'];
-                        //     $profit = $_POST['product_price'] +5;
-                        //     echo 'NGO:'. $profit; 
-                        // }
+                    if(isset($row['product_price']))
+                        {
+                            $total = $row['product_price'];
+                            $profit = $total * 10 / 100;
+                            echo 'NGO:- '. $profit; 
+                        }
                         ?>
-                        
-                        </p>                        
+             </span>                        
 
 
                         <p class="description"><?php echo html_entity_decode($row['product_desc']); ?></p>
