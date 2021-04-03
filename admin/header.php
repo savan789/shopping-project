@@ -34,7 +34,7 @@
         <div id="admin-header">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
                         <?php
                         if(!empty($result[0]['site_logo'])){ ?>
                             <a href="dashboard.php" class="logo-img"><img src="../images/<?php echo $result[0]['site_logo']; ?>" alt=""></a>
@@ -42,7 +42,7 @@
                             <a href="dashboard.php" class="logo"><?php echo $result[0]['site_name']; ?></a>
                         <?php } ?>
                     </div>
-                    <div class="col-md-offset-8 col-lg-offset-8 col-sm-offset-8 col-xs-offset-8 col-md-2">
+                    <div class="col-md-offset-8 col-lg-offset-8 col-sm-offset-6 col-xs-offset-6 col-md-2">
                         <div class="dropdown">
                             <a href="" class="dropdown-toggle logout" data-toggle="dropdown">
                                 <?php
@@ -79,4 +79,4 @@
                     </div>
                     <!-- Menu Bar End -->
                     <!-- Content Start -->
-                    <div class="col-md-10 col-sm-9 clearfix" id="admin-content">
+                    <div class="col-md-10 col-sm-9   clearfix" id="admin-content">

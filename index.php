@@ -22,10 +22,10 @@ include 'header.php'; ?>
                 <div class="banner-content ">
                     <div class="banner-carousel owl-carousel owl-theme">
                         <div class="item">
-                            <img src="images/banner-img-2.jpg" alt=""/>
+                            <img src="images/trygif.gif" alt=""/>
                         </div>
                         <div class="item">
-                            <img src="images/banner-img-1.jpg" alt=""/>
+                            <img src="images/commercial.gif" alt=""/>
                         </div>
                     </div>
 
@@ -34,6 +34,7 @@ include 'header.php'; ?>
         </div>
     </div>
 </div>
+
 <div class="product-section popular-products">
     <div class="container">
         <div class="row">
