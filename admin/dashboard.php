@@ -13,7 +13,7 @@ include 'header.php'; ?>
 <!-- 
         <h2 class="admin-heading">Dashboard</h2> -->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 ">
            
 <!-- chart start -->
       <div class="chart"> 
@@ -111,30 +111,32 @@ include 'header.php'; ?>
     <script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'polarArea',
         data: {
         //  labels: ['NUmber of '],
          datasets:
          [
                 {
-                data: [<?php echo $users[0]['u_count']; ?>,0],
+                data: [<?php echo $users[0]['u_count']; ?>, <?php echo $orders[0]['o_count']; ?>,],
                 label:"user",
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)',],   
+                    'rgba(54, 162, 235, 0.2)',
+                    '#a8e0638f'],   
                      borderColor: [
-                        'rgba(54, 162, 235, 1)'],
+                        'rgba(54, 162, 235, 1)',
+                        '#a8e063'],
                           borderWidth: 5    
                 },
 
-                {
-                data: [<?php echo $orders[0]['o_count']; ?>,0],
-                label:"order",
-                backgroundColor: [
-                '#a8e0638f',],   
-                     borderColor: [
-                        '#a8e063'],
-                          borderWidth: 5                  
-                },
+                // {
+                // data: [<?php echo $orders[0]['o_count']; ?>],
+                // label:"order",
+                // backgroundColor: [
+                // '#a8e0638f',],   
+                //      borderColor: [
+                //         '#a8e063'],
+                //           borderWidth: 5                  
+                // },
                
         ]
         },

@@ -60,7 +60,7 @@ include 'header.php'; ?>
                 <div class="form-group">
                     <label>Status</label>
                     <select class="form-control product_status" name="product_status">
-                        <option selected value="1">Avalable</option>
+                        <option selected value="1">Available</option>
                         <option value="0">Out Of Stock</option>
                     </select>
                 </div>
