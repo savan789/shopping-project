@@ -113,7 +113,10 @@ include 'header.php'; ?>
     var myChart = new Chart(ctx, {
         type: 'polarArea',
         data: {
-        //  labels: ['NUmber of '],
+            labels: [
+    'Users',
+    'Orders'
+  ],
          datasets:
          [
                 {
@@ -121,10 +124,10 @@ include 'header.php'; ?>
                 label:"user",
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.2)',
-                    '#a8e0638f'],   
+                    'rgba(75, 192, 192, 0.2)'],   
                      borderColor: [
                         'rgba(54, 162, 235, 1)',
-                        '#a8e063'],
+                        'rgb(75, 192, 192)'],
                           borderWidth: 5    
                 },
 

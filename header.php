@@ -40,7 +40,7 @@
         <!-- row -->
         <div class="row">
             <!-- LOGO -->
-            <div class="col-md-2">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
                 <?php
                     if(!empty($header[0]['site_logo'])){ ?>
                         <a href="<?php echo $hostname; ?>" class="logo-img"><img src="images/<?php echo $header[0]['site_logo']; ?>" alt=""></a>
@@ -49,7 +49,7 @@
                     <?php } ?>
             </div>
             <!-- /LOGO -->
-            <div class="col-md-7">
+            <div class="col-lg-6 col-md-5 col-sm-5 col-xs-6">
                 <form action="search.php" method="GET">
                 <div class="input-group search">
                     <input type="text" class="form-control" name="search" placeholder="Search for...">
@@ -59,7 +59,7 @@
                 </div>
                 </form>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <ul class="header-info">
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">

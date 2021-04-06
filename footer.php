@@ -47,7 +47,7 @@
                 </ul>
             </div>
             <div class="col-md-12">
-                <span><?php echo $footer[0]['footer_text'] ?> | Created by <a href="https://www.yahoobaba.net" target="_blank">YahooBaba</a></span>
+                <span><?php echo $footer[0]['footer_text'] ?> | Created by sd <a href="#" target="_blank">sd</a></span>
             </div>
         </div>
     </div>
