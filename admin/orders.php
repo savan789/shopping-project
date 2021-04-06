@@ -1,6 +1,6 @@
 <?php
 // include header file
-include 'header.php'; ?>
+include 'header.php';        ?>
         <div class="admin-content-container">
         
             <h2 class="admin-heading">All Orders</h2>
