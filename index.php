@@ -7,28 +7,78 @@ $result = $db->getResult();
 if(!empty($result)){ 
     $title = $result[0]['site_title']; 
 }else{ 
-    $title = "Shopping Project";
+    $title = "ᗪᖇEᗩᗰ ᗩᒪIᐯE.ᑕOᗰ";
 }
 // include header 
 include 'header.php'; ?>
-<div id="banner">
+
+<!-- Start Banner -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                <div class="banner-content">        
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <img src="images/brush4.jpg"> 
+  <div class="text text1"> 
+  <a href="#" class="btn"><span>button</span></a>
+<p>1 hello i am savan<p>
+</div>
+</div>
 
-<!-- try background -->
+<div class="mySlides fade">
+  <img src="images/brush2.jpg">
+  <div class="text text1"> 
+    <div>
+</div>
+<a href="#" class="btn"><span>button</span></a>
+<p>2 hello i am savan<p>
+</div>
+</div>
 
 
-                <div class="banner-content ">
-                    <div class="banner-carousel owl-carousel owl-theme">
-                        <div class="item">
-                            <img src="images/trygif.gif" alt=""/>
-                        </div>
-                        <div class="item">
-                            <img src="images/commercial.gif" alt=""/>
-                        </div>
+
+<div class="mySlides fade">
+  <img src="images/brush3.jpg">
+  <div class="text text1">
+  <a href="#" class="btn"><span>button</span></a>    
+<p>3 hello i am savan<p>
+</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+  
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script>
+<!-- End banner -->
                     </div>
-
                 </div>
             </div>
         </div>

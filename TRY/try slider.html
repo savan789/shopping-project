@@ -1,0 +1,198 @@
+
+<html>
+ <style>
+
+body{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+.banner1,.banner2,.banner3,.banner4{
+  height: 100vh;
+  width: 100%;
+  position:absolute;
+  left: 0;
+  top: 0;
+}
+img{
+  width: 150%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  animation: zoom-out 3s linear infinite;
+}
+@keyframes zoom-out {
+  100%{
+     width: 100%;
+  }
+
+}
+
+.text-box{
+  width: 600px;
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  color: red;
+  animation: textup 12s linear infinite;
+  transform: translateY(100px);
+}
+.text-box h1{
+  margin-bottom: 9px;
+}
+.text-box.p{
+  font-size: 14px;
+  line-height: 18px;
+  margin-top:80px;
+}
+.banner1{
+  animation: slide1 12s linear infinite;
+}
+.banner2{
+  animation: slide2 12s linear infinite;
+}
+.banner3{
+  animation: slide3 12s linear infinite;
+}
+.banner4{
+  animation: slide4 12s linear infinite;
+}
+
+@keyframes slide1 {
+  0%{
+    visibility: visible;
+  }
+  25%{
+    visibility: visible;
+  }
+  50%{
+    visibility: hidden;
+  }
+  75%{
+    visibility: hidden;
+  }
+  100%{
+    visibility: visible;
+  }
+}
+  @keyframes slide2 {
+    0%{
+      visibility: hidden;
+    }
+    25%{
+      visibility: hidden;
+    }
+    50%{
+      visibility: visible;
+    }
+    75%{
+      visibility: hidden;
+    }
+    100%{
+      visibility: hidden;
+    }
+}
+
+
+@keyframes slide3  {
+  0%{
+    visibility: hidden;
+  }
+  25%{
+    visibility: hidden;
+  }
+  50%{
+    visibility: hidden;
+  }
+  75%{
+    visibility: visible;
+  }
+  100%{
+    visibility:hidden;
+  }
+}
+
+@keyframes slide4  {
+  0%{
+    visibility: hidden;
+  }
+  25%{
+    visibility: hidden;
+  }
+  50%{
+    visibility: hidden;
+  }
+  75%{
+    visibility: hidden;
+  }
+  100%{
+    visibility:visible;
+  }
+}
+
+
+
+@keyframes textup {
+  10%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+
+}
+.text-box1{
+  animation-delay: 0s;
+}
+.text-box2{
+  animation-delay: 3s;
+}
+.text-box3{
+  animation-delay: 6s;
+}
+.text-box4{
+  animation-delay: 9s;
+}
+
+</style>
+
+<body>
+<div class="banner1">
+<img src="images/brush1.jpg">
+<div class="text-box text-box1">
+  <h1>1 hello</h1>
+<button>1 hello</button>
+<p>1 hello, i am savan</p>
+</div>
+
+<div class="banner2">
+<img src="images/brush2.jpg">
+<div class="text-box text-box2">
+  <h1>2 hello</h1>
+<button>2 hello</button>
+<p>2 hello, i am savan</p>
+</div>
+
+<div class="banner3">
+<img src="images/brush3.jpg">
+<div class="text-box text-box3">
+  <h1>3 hello</h1>
+<button>3 hello</button>
+<p>3 hello, i am savan</p>
+</div>
+
+<div class="banner4">
+<img src="images/brush4.jpg">
+<div class="text-box text-box4">
+  <h1>4 hello</h1>
+<button>4 hello</button>
+<p>4 hello, i am savan</p>
+</div>
+
+<script>
+</script>
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
-      background-color:#dbdcdf; 
+    /* background-color:#ff530012; */
 }
 h1,h2,h3,h4,h5,h6{
     margin: 0;
@@ -481,7 +481,7 @@ ul{
 /*=============================*/
 
 #header-menu .menu-list{
-    background-color: #00bcca;
+    background-color: #01313500;
     padding: 8px 15px;
     margin: 0 -15px;
     text-align: center;
@@ -490,7 +490,7 @@ ul{
     display: inline-block;
 }
 #header-menu .menu-list li a{
-    color: #fff;
+    color: rgb(192, 0, 0);
     background-color: rgba(255,255,255,0.1);
     font-size: 16px;
     font-weight: 600;
@@ -656,21 +656,178 @@ ul{
 	Banner
 \*----------------------------*/
 
-#banner{
+  /* FINAL BANNAR */
+  * {box-sizing: border-box;}
+  body {font-family: Verdana, sans-serif;
+overflow-x : hidden;
+}
+  
+  /* .mySlides {display: none;} */
+  /* img zoom */
+  .slideshow-container img {
+    width: 110%;
+    max-height: 400px;
+    vertical-align: middle;
+    animation: zoom-out 3s linear infinite;
+}
+@keyframes zoom-out {
+  100%{
+     width: 100%;
+  }
+}
+  /* Slideshow container */
+  .slideshow-container {
+    /* max-width: 1000px; */
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Caption text */
+  .text {
+    width: 600px;
+    position: absolute;
+    top: 150px;
+    left: 100px;
     color: #fff;
-}
+    animation: textup 9s linear infinite;
+    transform: translateY(100px);
+  }
+
+  @keyframes textup {
+    10%{
+      transform: translateY(0px);
+    }
+    100%{
+      transform: translateY(0px);
+    }
+  
+  }
+  .text1{
+    animation-delay: 0s;
+  }
+  .text2{
+    animation-delay: 3s;
+  }
+  .text3{
+    animation-delay: 6s;
+  }
+  
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.9s ease;
+  }
+  
+  .banner-content .active {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
 
 
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3s;
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }
 
-#banner .banner-content{
-    margin: 0 -15px;
-    height: 400px;
-    overflow: hidden;
-}
+/*----------------------------*\
+	/STARTBanner BUTTON
+\*----------------------------*/
+
+.btn{
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0;
+    position: relative;
+  }
+    .btn span{
+        display: block;
+        padding: 10px 13px;
+        position: relative;
+        
+    }
+  .btn:before,
+  .btn:after,
+  .btn span:before,
+  .btn span:after{
+      content: "";
+      background: rgb(152, 194, 0);
+      position: absolute;
+      top:0;
+      left: 0;
+      transition: all 0.15s ease-in-out 0s;
+  }
+  .btn:before,
+  .btn:after{
+      width: 3px;
+      height: 0;
+  }
+  .btn span:before,
+  .btn span:after{
+      width: 0;
+      height: 3px;
+      transition-delay: 0.15s;
+  }
+  .btn:after{
+      top:auto;
+      left:auto;
+      right: 0;
+      bottom: 0;  
+  }
+  
+  .btn span:before{
+      right: 0;
+      left: auto;
+  }
+  .btn span:after{
+      top: auto;
+      bottom: 0;
+  }
+  .btn:hover:after,
+  .btn:hover:before{
+      height: 100%;
+      transition-delay: 0.15s;
+  }
+  
+  .btn:hover span:after,
+  .btn:hover span :before{
+      width: 100%;
+      transition-delay: 0.3s;
+  }
+  
+/*----------------------------*\
+	/END Banner BUTTON
+\*----------------------------*/
+
 
 
 /*----------------------------*\
-	/Banner
+	/END Banner
 \*----------------------------*/
 
 
