@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+body{
+  font-family: "muli";
+}
+.ag-format-container {
+  width: 1142px;
+  margin: 0 auto;
+}
+
+
+.ag-cards_list {
+  display: flex;
+
+}
+.ag-cards_list:hover .ag-cards_picture::before {
+  animation: none;
+}
+
+.ag-cards_item {
+  height: 175px;
+  width: 125px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius:3px;
+  transform:perspective(400px);
+  transform-style: preserve-3d;
+}
+
+.ag-cards_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  border: 1px solid transparent;
+  border-radius: 10%;
+  background-color: #464646;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+}
+
+.ag-cards_info::before,
+.ag-cards_info::after {
+  content: "";
+  height: 20px; 
+  width: 20px;
+  border: 1px solid transparent;
+  background-color: #fff;
+  z-index: 1;
+  position: absolute;
+  left: -15px;
+  bottom: 28px;
+  border-radius: 50%;
+}
+
+.ag-cards_info::after {
+  left: auto;
+  right: -15px;
+}
+.ag-cards_info:hover {
+    border-radius: 5px;
+}
+.ag-cards_info:hover::before,
+.ag-cards_info:hover::after {
+  border-radius: 50%;
+  clip: rect(0, 20px, 20px, 0);
+}
+/* center round */
+.ag-cards_picture {
+  /* margin-bottom: px;      add pic size */
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+.ag-cards_picture::before {
+  content: "";
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  right: 50%;
+  bottom: 5px;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px 0;
+  transform: translateX(50%);
+  animation: an-shadow-blink 16s ease-in-out infinite;
+}
+.ag-cards_img {
+  position: relative;
+}
+/* text */
+
+.ag-cards_title {
+  margin: 0 0 5px;
+
+  text-transform: uppercase;
+  font-size: 10px;
+  color: rgb(230, 0, 0);
+
+  z-index: 1;
+}
+.ag-cards_text {
+  color:blue;
+}
+.ag-cards_text__btn {
+  text-transform: uppercase;
+}
+.ag-cards_text__prize {
+  margin: 0 0 1px;
+  font-size: 10px;
+  font-family: "muli";
+}
+
+/* btn */
+.ag-cards_btn {
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 0 0 5% 5%;
+  position: relative;
+}
+
+.ag-cards_btn::before {
+  content: "";
+  height: 10px;
+  width: 100%;
+  /* background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent 100%); */
+  background-size: 1em 2px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+}
+
+/* 1 newbie */
+.ag-cards_item__one .ag-cards_info:hover,
+.ag-cards_item__one .ag-cards_info:hover::before,
+.ag-cards_item__one .ag-cards_info:hover::after {
+  border-color: #999;
+}
+.ag-cards_item__one .ag-cards_btn {
+  background-color: #999;
+}
+.ag-cards_item__one .ag-cards_picture::before {
+  background-image: linear-gradient(-30deg, #999, #fcfcfc);
+  color: rgba(153, 153, 153, 0.58);
+  animation-delay: 0s;
+}
+/* 2 salaga */
+.ag-cards_item__two .ag-cards_info:hover,
+.ag-cards_item__two .ag-cards_info:hover::before,
+.ag-cards_item__two .ag-cards_info:hover::after {
+  border-color: #a26afb;
+}
+.ag-cards_item__two .ag-cards_btn {
+  background-color: #a26afb;
+}
+.ag-cards_item__two .ag-cards_picture::before {
+  background-image: linear-gradient(-30deg, #a26afb, #f360f6);
+  color: rgba(162, 106, 251, 0.58);
+  animation-delay: 2s;
+}
+/* 3 lucky*/
+.ag-cards_item__three .ag-cards_info:hover,
+.ag-cards_item__three .ag-cards_info:hover::before,
+.ag-cards_item__three .ag-cards_info:hover::after {
+  border-color: #fc7dae;
+}
+.ag-cards_item__three .ag-cards_btn {
+  background-color: #fc7dae;
+}
+.ag-cards_item__three .ag-cards_picture::before {
+  background-image: linear-gradient(-30deg, #fc7dae, #ff9d4d);
+  color: rgba(252, 125, 174, 0.58);
+  animation-delay: 4s;
+}
+/* 4 amateur*/
+.ag-cards_item__four .ag-cards_info:hover,
+.ag-cards_item__four .ag-cards_info:hover::before,
+.ag-cards_item__four .ag-cards_info:hover::after {
+  border-color: #ef7939;
+}
+.ag-cards_item__four .ag-cards_btn {
+  background-color: #ef7939;
+}
+.ag-cards_item__four .ag-cards_picture::before {
+  background-image: linear-gradient(-30deg, #ef7939, #f5d03d);
+  color: rgba(239, 121, 57, 0.58);
+  animation-delay: 6s;
+}
+/* 5 experienced*/
+.ag-cards_item__five .ag-cards_info:hover,
+.ag-cards_item__five .ag-cards_info:hover::before,
+.ag-cards_item__five .ag-cards_info:hover::after {
+  border-color: #fc7d7d;
+}
+.ag-cards_item__five .ag-cards_btn {
+  background-color: #fc7d7d;
+}
+.ag-cards_item__five .ag-cards_picture::before {
+  background-image: linear-gradient(-30deg, #fc7d7d, #e5060d);
+  color: rgba(252, 125, 125, 0.58);
+  animation-delay: 8s;
+}
+/* 6 specialist*/
+.ag-cards_item__six .ag-cards_info:hover,
+.ag-cards_item__six .ag-cards_info:hover::before,
+.ag-cards_item__six .ag-cards_info:hover::after {
+  border-color: #0e93ec;
+}
+.ag-cards_item__six .ag-cards_btn {
+  background-color: #0e93ec;
+}
+.ag-cards_item__six .ag-cards_picture::before {
+  background-image: linear-gradient(-30deg, #0e93ec, #02f7e7);
+  color: rgba(14, 147, 236, 0.58);
+  animation-delay: 10s;
+}
+/* 7 professional*/
+.ag-cards_item__seven .ag-cards_info:hover,
+.ag-cards_item__seven .ag-cards_info:hover::before,
+.ag-cards_item__seven .ag-cards_info:hover::after {
+  border-color: #15b769;
+}
+.ag-cards_item__seven .ag-cards_btn {
+  background-color: #15b769;
+}
+.ag-cards_item__seven .ag-cards_picture::before {
+  background-image: linear-gradient(-30deg, #15b769, #b4ee6d);
+  color: rgba(21, 183, 105, 0.58);
+  animation-delay: 12s;
+}
+/* 8 thieves*/
+.ag-cards_item__eight .ag-cards_info:hover,
+.ag-cards_item__eight .ag-cards_info:hover::before,
+.ag-cards_item__eight .ag-cards_info:hover::after {
+  border-color: #fbba41;
+}
+.ag-cards_item__eight .ag-cards_btn {
+  background-color: #fbba41;
+}
+.ag-cards_item__eight .ag-cards_picture::before {
+  background-image: linear-gradient(-30deg, #fbba41, #fcfc64);
+  color: rgba(251, 186, 65, 0.58);
+  animation-delay: 14s;
+}
+
+@keyframes an-shadow-blink {
+  6% {
+    box-shadow: 0 .5em 2.5em 1.25em;
+  }
+  12.5% {
+    box-shadow: 0 .5em 1.8125em 0;
+  }
+}
+
+@media only screen and (max-width: 979px) {
+  .ag-cards_item {
+    width: calc(50% - 1em);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 500px;
+  }
+
+}
+
+@media only screen and (max-width: 639px) {
+  .ag-cards_item {
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .ag-format-container {
+    width: 200px;
+  }
+
+}
+
+@media (min-width: 980px) and (max-width: 1161px) {
+  .ag-format-container {
+    width: 500px;
+  }
+  .ag-cards_item {
+    width: calc(33% - 15px);
+  }
+}
+    </style>
+
+
+
+
+
+
+<body>
+ 
+
+
+<!-- 1 -->
+<div class="ag-cards-block">
+  <div class="ag-format-container">
+    <ul class="ag-cards_list">
+
+      <li class="ag-cards_item ag-cards_item__one">
+        <div class="ag-cards_info">
+          <picture class="ag-cards_picture">              
+              <img src="chairpng.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+          </picture>
+          <p class="ag-cards_title">
+            1
+          </p>
+          <p class="ag-cards_text ag-cards_text__prize">
+            Interval
+          </p>
+          <div class="ag-cards_btn">
+            <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+          </div>
+        </div>
+      </li>
+
+<!-- 2 -->
+
+<li class="ag-cards_item ag-cards_item__two">
+  <div class="ag-cards_info">
+    <picture class="ag-cards_picture">              
+        <img src="chairpng.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+    </picture>
+    <p class="ag-cards_title">
+      2
+    </p>
+    <p class="ag-cards_text ag-cards_text__prize">
+      Interval
+    </p>
+    <div class="ag-cards_btn">
+      <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+    </div>
+  </div>
+</li>
+
+<!-- 3 -->
+
+      <li class="ag-cards_item ag-cards_item__three">
+        <div class="ag-cards_info">
+          <picture class="ag-cards_picture">              
+              <img src="chairpng.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+          </picture>
+          <p class="ag-cards_title">
+           3
+          </p>
+          <p class="ag-cards_text ag-cards_text__prize">
+            Interval
+          </p>
+          <div class="ag-cards_btn">
+            <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+          </div>
+        </div>
+      </li>
+
+      <!-- 4 -->
+        
+            <li class="ag-cards_item ag-cards_item__four">
+              <div class="ag-cards_info">
+                <picture class="ag-cards_picture">              
+                    <img src="chairpng.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+                </picture>
+                <p class="ag-cards_title">
+                  4
+                </p>
+                <p class="ag-cards_text ag-cards_text__prize">
+                  Interval
+                </p>
+                <div class="ag-cards_btn">
+                  <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+                </div>
+              </div>
+            </li>
+<!-- 5 -->
+      <li class="ag-cards_item ag-cards_item__five">
+        <div class="ag-cards_info">
+          <picture class="ag-cards_picture">              
+              <img src="chairpng.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+          </picture>
+          <p class="ag-cards_title">
+            5
+          </p>
+          <p class="ag-cards_text ag-cards_text__prize">
+            Interval
+          </p>
+          <div class="ag-cards_btn">
+            <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+          </div>
+        </div>
+      </li>
+<!-- 6 -->
+            <li class="ag-cards_item ag-cards_item__six">
+              <div class="ag-cards_info">
+                <picture class="ag-cards_picture">
+                    <img src="brushpng1.png" Dream width="150px" height="100px"Alive class="ag-cards_img">
+                </picture>
+                <p class="ag-cards_title">
+                  6
+                </p>
+                <p class="ag-cards_text ag-cards_text__prize">
+                  Interval
+                </p>
+                <div class="ag-cards_btn">
+                  <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+                </div>
+              </div>
+            </li>
+
+<!-- 7 -->
+            <li class="ag-cards_item ag-cards_item__seven">
+              <div class="ag-cards_info">
+                <picture class="ag-cards_picture">
+                    <img src="brushpng1.png" Dream width="150px" height="100px"Alive class="ag-cards_img">
+                </picture>
+                <p class="ag-cards_title">
+                  7
+                </p>
+                <p class="ag-cards_text ag-cards_text__prize">
+                  Interval
+                </p>
+                <div class="ag-cards_btn">
+                  <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+                </div>
+              </div>
+            </li>
+ <!-- 8 -->
+            <li class="ag-cards_item ag-cards_item__eight">
+              <div class="ag-cards_info">
+                <picture class="ag-cards_picture">
+                  <img src="pagepng1.png" Dream width="150px" height="100px"Alive alt="Boss" class="ag-cards_img">
+                </picture>
+               
+                <p class="ag-cards_title">
+                 8
+                </p>
+                <p class="ag-cards_text ag-cards_text__prize">
+                  Interval
+                </p>
+                <div class="ag-cards_btn">
+                  <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+</body>
+</html>

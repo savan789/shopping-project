@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+		}
+
+		.ball {
+			width: 100px;
+			height: 100px;
+			background-image: url("images/gif1.gif");
+			animation: bounce 1s;
+			animation-direction: alternate;
+			animation-timing-function: cubic-bezier(.78,.76,.35,.35));
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes bounce {
+			from {
+				transform: translate3d(0, 0, 0);
+			}
+			to {
+				transform: translate3d(0, 20px, 0);
+			}
+		}
+		/* Prefix Support */
+
+	</style>
+</head>
+
+<body>
+	<div class="ball">
+
+  <img src="images/logo.png">
+
+</div>
+</body>
+
+</html>

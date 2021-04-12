@@ -54,7 +54,7 @@
                 <div class="input-group search">
                     <input type="text" class="form-control" name="search" placeholder="Search for...">
                     <span class="input-group-btn">
-                        <input class="btn btn-default"  type="submit" value="Search" />
+                        <input class="btn btn-default" width="50px" type="submit" value="Search"/>
                     </span>
                 </div>
                 </form>

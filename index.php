@@ -16,40 +16,48 @@ include 'header.php'; ?>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="banner-content">        
+                <div class="banner-content">   
+                         
 <div class="slideshow-container">
 <div class="mySlides fade">
-  <img src="images/brush4.jpg"> 
+  <img src="images/bookpng1.png"> 
   <div class="text text1"> 
-  <a href="#" class="btn"><span>button</span></a>
-<p>1 hello i am savan<p>
+  <a href="#" class="btn"><span>button</span></a><br>
+<p>1 Dream Alive<p>
 </div>
 </div>
 
 <div class="mySlides fade">
-  <img src="images/brush2.jpg">
+  <img src="images/brushpng1.png">
   <div class="text text1"> 
-    <div>
-</div>
 <a href="#" class="btn"><span>button</span></a>
-<p>2 hello i am savan<p>
+<p>2 Dream Alive<p>
 </div>
 </div>
 
 
 
 <div class="mySlides fade">
-  <img src="images/brush3.jpg">
+  <img src="images/pagepng1.png">
   <div class="text text1">
   <a href="#" class="btn"><span>button</span></a>    
-<p>3 hello i am savan<p>
+<p><b>3 Dream Alive</b><p>
+</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="images/brushpng1.png">
+  <div class="text text1"> 
+<a href="#" class="btn"><span>button</span></a>
+<p>4 Dream Alive<p>
 </div>
 </div>
 
 </div>
 <br>
 
-<div style="text-align:center">
+<div class="dots">
+  <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span> 
@@ -78,12 +86,174 @@ function showSlides() {
 }
 </script>
 <!-- End banner -->
-                    </div>
-                </div>
+
+
+                    <!-- </div>
+                </div> -->
             </div>
         </div>
     </div>
 </div>
+
+
+
+<!-- START product catagori -->
+<div class="ag-cards-block">
+  <div class="ag-format-container">
+    <ul class="ag-cards_list">
+
+      <li class="ag-cards_item ag-cards_item__one">
+        <div class="ag-cards_info">
+          <picture class="ag-cards_picture">              
+              <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+          </picture>
+          <p class="ag-cards_title">
+            1
+          </p>
+          <p class="ag-cards_text ag-cards_text__prize">
+            Interval
+          </p>
+          <div class="ag-cards_btn">
+            <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+          </div>
+        </div>
+      </li>
+
+<!-- 2 -->
+
+<li class="ag-cards_item ag-cards_item__two">
+  <div class="ag-cards_info">
+    <picture class="ag-cards_picture">              
+        <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+    </picture>
+    <p class="ag-cards_title">
+      2
+    </p>
+    <p class="ag-cards_text ag-cards_text__prize">
+      Interval
+    </p>
+    <div class="ag-cards_btn">
+      <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+    </div>
+  </div>
+</li>
+
+<!-- 3 -->
+
+      <li class="ag-cards_item ag-cards_item__three">
+        <div class="ag-cards_info">
+          <picture class="ag-cards_picture">              
+              <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+          </picture>
+          <p class="ag-cards_title">
+           3
+          </p>
+          <p class="ag-cards_text ag-cards_text__prize">
+            Interval
+          </p>
+          <div class="ag-cards_btn">
+            <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+          </div>
+        </div>
+      </li>
+
+      <!-- 4 -->
+        
+            <li class="ag-cards_item ag-cards_item__four">
+              <div class="ag-cards_info">
+                <picture class="ag-cards_picture">              
+                    <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+                </picture>
+                <p class="ag-cards_title">
+                  4
+                </p>
+                <p class="ag-cards_text ag-cards_text__prize">
+                  Interval
+                </p>
+                <div class="ag-cards_btn">
+                  <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+                </div>
+              </div>
+            </li>
+<!-- 5 -->
+      <li class="ag-cards_item ag-cards_item__five">
+        <div class="ag-cards_info">
+          <picture class="ag-cards_picture">              
+              <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
+          </picture>
+          <p class="ag-cards_title">
+            5
+          </p>
+          <p class="ag-cards_text ag-cards_text__prize">
+            Interval
+          </p>
+          <div class="ag-cards_btn">
+            <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+          </div>
+        </div>
+      </li>
+<!-- 6 -->
+            <li class="ag-cards_item ag-cards_item__six">
+              <div class="ag-cards_info">
+                <picture class="ag-cards_picture">
+                    <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive class="ag-cards_img">
+                </picture>
+                <p class="ag-cards_title">
+                  6
+                </p>
+                <p class="ag-cards_text ag-cards_text__prize">
+                  Interval
+                </p>
+                <div class="ag-cards_btn">
+                  <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+                </div>
+              </div>
+            </li>
+
+<!-- 7 -->
+            <li class="ag-cards_item ag-cards_item__seven">
+              <div class="ag-cards_info">
+                <picture class="ag-cards_picture">
+                    <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive class="ag-cards_img">
+                </picture>
+                <p class="ag-cards_title">
+                  7
+                </p>
+                <p class="ag-cards_text ag-cards_text__prize">
+                  Interval
+                </p>
+                <div class="ag-cards_btn">
+                  <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+                </div>
+              </div>
+            </li>
+ <!-- 8 -->
+            <li class="ag-cards_item ag-cards_item__eight">
+              <div class="ag-cards_info">
+                <picture class="ag-cards_picture">
+                  <img src="images/pagepng1.png" Dream width="150px" height="100px"Alive alt="Boss" class="ag-cards_img">
+                </picture>
+               
+                <p class="ag-cards_title">
+                 8
+                </p>
+                <p class="ag-cards_text ag-cards_text__prize">
+                  Interval
+                </p>
+                <div class="ag-cards_btn">
+                  <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+<!-- END product catagori -->
+
+
+
+
 
 <div class="product-section popular-products">
     <div class="container">
