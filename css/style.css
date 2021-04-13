@@ -100,6 +100,7 @@ ul{
     box-shadow: 0 0 30px rgba(0,0,0,0.15);
     position: relative;
     z-index: 1;
+    
 }
 #admin-header .logo{
     margin: 0;
@@ -959,10 +960,6 @@ overflow-x : hidden;
     padding: 30px 0;
     margin-top: 20px;
 }
-
-
-
-
 .ag-format-container {
     width: 90%;
     margin: 0 auto;
@@ -1078,7 +1075,7 @@ overflow-x : hidden;
   /* btn */
   .ag-cards_btn {
     width: 100%;
-    padding: 5px;
+    padding: 7px;
     text-align: center;
     box-sizing: border-box;
     border-radius: 0 0 5% 5%;
@@ -1265,8 +1262,137 @@ overflow-x : hidden;
 \*----------------------------*/
 
 
+.card_list {
+     max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 50px;
+  bottom: 20px;
+  }
+  
+  .card_item {
+    overflow: hidden;
+    /* box-shadow: 0 5px 10px rgb(191 209 103); */
+ border: 1px solid rgb(109, 67, 4);
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 10%;
+  }
+  .card_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    border: 1px solid transparent;
+    text-decoration: none;
+    box-sizing: border-box;
+    position: relative;
+  /* -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 600px; */
+  }
+  
+  
+  .card_picture {
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  
+  /* btn */
+  .card_btn {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    border: none;
+    background-color: rgba(128, 255, 0, 0.205);
+  }
+  
+  .item {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+  }
+  
+   .card_item_one{
+    height: 500px;
+    width: 40%;
+    position: relative;
+  margin: 15px;
+  
+  }
+  .card_item_two{
+    height: 400px;
+    width: 50%;
+  position: relative;
+  bottom: 110px;
+  }
+  
+  
+  .card_item_three{
+   height: 400px;
+   width: 50%;
+  position: relative;
+  bottom: 85px;
+  margin: 15px;
+  
+  }
+  
+  .card_item_four{
+   height: 500px;
+   width: 40%;
+   position: relative;
+   bottom: 100px;
+  margin: auto;
+  padding: bottom 50px; ;
+  }
+  
+  @media (max-width:630px){
 
+    .card_list {
+     width: 90%;
+  
+     padding-bottom: 50px;
+     }
+    .card_item {
+        width: 90%;
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+        
+   .card_item_one{
+    position: relative;
+    padding: 15px;
+  
+  }
+  .card_item_two{
+  position: relative;
+  bottom: 0px;
+  }
+  
+  
+  .card_item_three{
 
+  position: relative;
+  bottom: 0px;
+  
+  }
+  
+  .card_item_four{
+ 
+   position: relative;
+   bottom: 0px;
+ 
+
+  }
+}
 
 
 /*----------------------------*\

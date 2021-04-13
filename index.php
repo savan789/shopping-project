@@ -117,7 +117,7 @@ function showSlides() {
             <span class="ag-cards_text ag-cards_text__btn">Deposit</span>
           </div>
         </div>
-      </li>
+      </li>4
 
 <!-- 2 -->
 
@@ -252,8 +252,64 @@ function showSlides() {
 <!-- END product catagori -->
 
 
+<!-- STARTfeadin -->
+
+<div class="card_list">
 
 
+<div class="card_item item card_item_one">
+  <div class="card_info">
+    <picture class="card_picture">
+        <img src="images/chairpng.png" alt="" width="550px" height="350px">
+    </picture>
+    <button class="card_btn">
+    1button
+    </button>
+  </div>
+</div>
+
+<div class="card_item item card_item_two">
+<div class="card_info">
+<picture class="card_picture">
+    <img src="images/chairpng.png" width="550px" height="350px">
+</picture>
+<button class="card_btn">
+2  button
+</button>
+</div>
+</div>
+
+
+<div class="card_item item card_item_three">
+<div class="card_info">
+<picture class="card_picture">
+  <img src="images/chairpng.png" width="550px" height="350px">
+</picture>
+<button class="card_btn">
+3  button
+</button>
+</div>
+</div>
+
+<div class="card_item item card_item_four">
+<div class="card_info">
+<picture class="card_picture">
+    <img src="images/chairpng.png" alt="" width="550px" height="350px">
+</picture>
+<button class="card_btn">
+4 button
+</button>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+<!--END fradin -->
 
 <div class="product-section popular-products">
     <div class="container">
