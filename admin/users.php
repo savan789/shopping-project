@@ -9,6 +9,7 @@
         $db->select('user','*',null,null,'user_id DESC',10);
         $result = $db->getResult();
         if (count($result) > 0) { ?>
+   <div class="table-responsive">
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                     <th>Full Name</th>
@@ -39,6 +40,7 @@
                 <?php } ?>
                 </tbody>
             </table>
+   </div>
             <?php }else{ ?>
             <div class="not-found clearfix">!!! No Users Found !!!</div>
             <?php  }  ?>

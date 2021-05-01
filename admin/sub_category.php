@@ -10,6 +10,7 @@ include 'header.php'; ?>
     $db->select('sub_categories','sub_categories.sub_cat_id,sub_categories.sub_cat_title,sub_categories.cat_parent,sub_categories.show_in_header,sub_categories.show_in_footer,categories.cat_title','categories ON sub_categories.cat_parent=categories.cat_id',null,'sub_categories.sub_cat_id DESC',$limit);
     $result = $db->getResult();
     if (count($result) > 0) { ?>
+    <div class="table-responsive">
         <table class="table table-striped table-hover table-bordered">
             <thead>
             <th>Title</th>
@@ -45,6 +46,7 @@ include 'header.php'; ?>
             <?php } ?>
             </tbody>
         </table>
+    </div>
     <?php }else{ ?>
         <div class="not-found">!!! No Sub Categories Available !!!</div>
     <?php    }  ?>

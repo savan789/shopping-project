@@ -9,6 +9,7 @@ include 'header.php'; ?>
         $db->select('products','products.product_id,products.product_code,products.product_cat,products.product_sub_cat,products.product_brand,product_title,products.product_price,products.qty,products.product_status,products.featured_image,sub_categories.sub_cat_title,brands.brand_title','sub_categories ON products.product_sub_cat=sub_categories.sub_cat_id LEFT JOIN brands ON products.product_brand=brands.brand_id',null,'products.product_id DESC',$limit);
         $result = $db->getResult();
         if (count($result) > 0) { ?>
+        <div class="table-responsive">
             <table id="productsTable" class="table table-striped table-hover table-bordered">
                 <thead>
                     <th>#</th>
@@ -53,6 +54,7 @@ include 'header.php'; ?>
                 <?php } ?>
                 </tbody>
             </table>
+        </div>
         <?php }else{ ?>
             <div class="not-found clearfix">!!! No Products Found !!!</div>
         <?php    } ?>

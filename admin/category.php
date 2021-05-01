@@ -9,6 +9,7 @@ include 'header.php'; ?>
     $db->select('categories','*',null,null,'categories.cat_id DESC',$limit);
     $result = $db->getResult();
     if (count($result) > 0) { ?>
+    <div class="table-responsive">
         <table class="table table-striped table-hover table-bordered">
             <thead>
             <th>Title</th>
@@ -26,6 +27,7 @@ include 'header.php'; ?>
             <?php } ?>
             </tbody>
         </table>
+    </div>
     <?php }else{ ?>
         <div class="not-found">!!! No Category Available !!!</div>
     <?php    }  ?>

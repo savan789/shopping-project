@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Animation Video Parallax</title>
+</head>
+<body>
+	<header>
+		<video autoplay muted loop>
+			<source src="video.mp4" type="video/mp4" id="bg">
+		</video>
+		<img src="mountain.png" id="mountain">
+		<img src="girl.png" id="girl">
+		<h1 id="text">Video Parallax</h1>
+	</header>
+	<section>
+		<h2>Video Parallax Effect</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quasi molestiae sequi quisquam assumenda esse alias ea quod voluptate corrupti? At fugit incidunt consequuntur iste. Iusto accusantium ad accusamus commodi, excepturi iure, libero mollitia, reiciendis illum, nostrum itaque aspernatur molestias. Repellendus praesentium eveniet, accusantium. Enim ut, rem repellat quasi eos numquam sunt dolorem dolore, corrupti laboriosam reprehenderit, velit at, temporibus harum labore. Nam dolore doloremque dolorum amet tenetur natus commodi soluta nemo. Esse unde, quasi. Reprehenderit ab, sint corrupti, nobis, repellat atque quam quis cumque fugit ex ipsum voluptates eveniet magni quo praesentium ullam at, accusamus velit veritatis nesciunt! Dolorum totam voluptatum corporis distinctio eum iure, voluptas non, quaerat tenetur ad, doloremque quas maiores iste nisi labore fuga! Sunt eligendi quisquam adipisci eveniet inventore delectus eum obcaecati itaque, non velit, ad accusamus odit omnis laboriosam. Saepe aut doloribus debitis quaerat accusamus, vero excepturi, minima quam quis quibusdam autem assumenda, ut.</p>
+	</section>
+
+	<script>
+		const bg = document.getElementById('bg');
+		const mountain = document.getElementById('mountain');
+		const girl = document.getElementById('girl');
+		const text = document.getElementById('text');
+
+		window.addEventListener("scroll", ()=>{
+			const value = window.scrollY;
+
+			bg.style.top = value * 0.5 + 'px';
+			mountain.style.top = -value * 0.08 + 'px';
+			girl.style.top = value * 0.15 + 'px';
+			text.style.top = value * 0.6 + 'px';
+		});
+	</script>
+</body>
+</html>

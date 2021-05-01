@@ -22,23 +22,29 @@ if(isset($_SESSION['admin_name'])) {
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-md-offset-3 col-md-6">
+                <div class="col-md-offset-3 col-md-6"> 
+                    <div class="flogin">   
+                         
+                <img src="images/FORM.PNG">
+                <h1 class="logo">ᗪᖇEᗩᗰ ᗩᒪIᐯE</h1>   
                     <div class="login-form">
-                        <h1 class="logo">Online Shop</h1>
+                        
                         <!-- Form -->
                         <form id="adminLogin" method ="POST" autocomplete="off">
                             <div class="form-group">
-                                <label>Username</label>
+                                <label></label>
                                 <input type="text" class="form-control username" placeholder="Username" required>
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
+                                <label> </label>
                                 <input type="password" class="form-control password" placeholder="password" required>
-                            </div>
+                            </div><br>
                             <input type="submit" name="login" class="btn" value="login"/>
                         </form>
                         <!-- /Form -->
                     </div>
+
+</div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<Style>
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.videoSlides {display: none}
+.wave{
+        padding: 25px;
+        background: url("/images/gif1.gif");
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-image: linear-gradient(#a000fd,#c1a1c0); 
+        /* pqr */
+}
+
+#slider{
+    border-radius: 50%;
+}
+
+/* Slideshow container */
+.videoslideshow-container {
+  position: relative;
+  right: -50%;
+  height: 100%;
+    width: 50%;
+    /* padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    border-radius: 20vw; */
+   background-image: url("images/brushpng1.png");
+}
+
+.wave img{
+    position: absolute;
+    top: 200px;
+    text-align: center;
+    margin: 5rem;    
+    height: 37rem;
+    max-width: 30rem;
+    padding: 3rem; 
+}
+
+
+
+.videoslideshow-container video{
+  height: 500px;
+  /* vertical-align:; */
+  width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 50px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  /* background-color: rgba(0,0,0,0.8); */
+}
+
+/* Caption text */
+.vtext {
+  color: #FF00B2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.sbtn {
+    width: 10%;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    color: brown;
+    position: relative;
+    background-color: rgba(0, 0, 0,0);
+    border: 1px solid rgba(255, 255, 255, 0.363);
+  }
+
+/* The vdots/bullets/indicators */
+.vdot {
+    position: relative;
+    right: -25%;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.videoslideshow-container.active, .vdot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.vfade {
+
+  animation-name: vfade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes vfade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes vfade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.vtext {font-size: 11px}
+}
+
+
+
+
+</Style>
+
+
+<body>
+    
+    <div class="wave">                                                       
+        <!-- <img src="images/MOBILE.png" width="30%" height="50%"> -->
+        
+        <div class="videoslideshow-container">
+          <div class="videoSlides vfade"> 
+            <video id="slider" muted autoplay loop>
+            <source src="smakebrush.mp4" type="video/mp4">  
+          </video>
+          <div class="vtext">This is especially for you<br><br>
+          <button class="sbtn">click me</button>
+          </div>
+          </div>
+        
+          <div class="videoSlides vfade">
+          <video id="slider" muted autoplay loop>
+            <source src="smakebrush.mp4" type="video/mp4">
+          </video>
+            <div class="vtext">This is especially for you<br><br>
+          <button class="sbtn">click me</button>
+          </div>
+          </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="vdot" onclick="currentSlide(1)"></span> 
+          <span class="vdot" onclick="currentSlide(2)"></span>
+        </div>
+        
+        </div>
+
+</body>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("videoSlides");
+      var vdots = document.getElementsByClassName("vdot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < vdots.length; i++) {
+          vdots[i].className = vdots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      vdots[slideIndex-1].className += " active";
+    }
+    </script>
+</html>

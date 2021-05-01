@@ -12,15 +12,15 @@ include 'header.php'; ?>
                                                                                                                           
 <!-- 
         <h2 class="admin-heading">Dashboard</h2> -->
-        <div class="row">
-            <div class="col-md-12 ">
-           
+     
 <!-- chart start -->
       <div class="chart"> 
       <canvas id="myChart" width="800" height="500"></canvas>
       </div>
 <!-- chart end -->
-
+<div class="container-fluid">
+<div class="row">
+        <div class="col-md-12 ">         
             <div class="col-md-4">
                 <?php
                     $db = new Database();
@@ -105,7 +105,7 @@ include 'header.php'; ?>
             </div>
         </div>
     </div>
-
+</div>
 <!-- cahrt script start -->
 <script src="js/chart.js"></script>
     <script>

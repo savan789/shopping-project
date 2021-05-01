@@ -11,6 +11,7 @@ include 'header.php';        ?>
                      LEFT JOIN user ON order_products.product_user=user.user_id LEFT JOIN payments ON payments.txn_id = order_products.pay_req_id GROUP BY order_products.order_id ORDER BY order_products.order_id DESC');
                 $result = $db->getResult();
                 if(count($result) > 0) {  ?>
+                <div class="table-responsive">
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                             <th>ORDER No.</th>
@@ -72,6 +73,7 @@ include 'header.php';        ?>
                             }?>
                             </tbody>
                         </table>
+                </div>
                     <?php
                 }else { ?>
                         <div class="not-found">!!! No Orders Found !!!</div>

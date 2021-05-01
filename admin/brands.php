@@ -10,6 +10,7 @@ include 'header.php'; ?>
     $db->select('brands','brands.brand_id,brands.brand_title,brands.brand_cat,categories.cat_title','categories ON brands.brand_cat=categories.cat_id',null,'brands.brand_id DESC',$limit);
     $result = $db->getResult();
     if (count($result) > 0) { ?>
+    <div class="table-responsive">
         <table class="table table-striped table-hover table-bordered">
             <thead>
             <th>Title</th>
@@ -29,6 +30,7 @@ include 'header.php'; ?>
             <?php } ?>
             </tbody>
         </table>
+    </div>
     <?php }else{ ?>
         <div class="not-found">!!! No Barnds Found !!!</div>
     <?php    } ?>
