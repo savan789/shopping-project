@@ -11,40 +11,98 @@ if(!empty($result)){
 }
 // include header 
 include 'head.php'; ?>
+ <?php
+     if (session_status() == PHP_SESSION_NONE) {
+         session_start();
+     }
+?>
 
+<!-- START product catagori -->
+<div class="sld">
+<main>
+<section class="slides"> 
 
+<div class="circle1">
+    <img src="images/circle.png" class="img-fluid">
+  </div>
 
-<!-- START product catagori --> 
-<div class="ag-cards-block">
+  <section class="slides-nav">
+    <nav class="slides-nav__nav">
+      <button class="slides-nav__prev js-prev">Prev</button>
+      <button class="slides-nav__next js-next">Next</button>
+    </nav>
+  </section>
 
-
-<!-- 
-<div id="header-menu">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="menu-list">
-                    <?php
-                    $db = new Database();
-                    $db->select('sub_categories','*',null,'cat_products > 0 AND show_in_header = "1"',null,null);
-                    $result = $db->getResult();
-                    if(count($result) > 0){
-                        foreach($result as $res){ ?>
-                            <li><a href="category.php?cat=<?php echo $res['sub_cat_id']; ?>"><?php echo $res['sub_cat_title']; ?></a></li>
-                        <?php    }
-                    } ?>
-                </ul>
-            </div>
-        </div>
+  <section class="slide is-active">
+    <div class="slide__content">
+      <figure class="slide__figure"><div class="slide__img img-fluid" style="background-image:url(images/brush4.jpg)"></div></figure>
+      <header class="slide__header">
+        <h2 class="slide__title">
+          <span class="title-line"><span>First</span></span>
+          <span class="title-line"><span>Or Page</span></span>
+        </h2>
+      </header>
     </div>
-</div> -->
+  </section>
+
+  <section class="slide">
+    <div class="slide__content">
+      <figure class="slide__figure"><div class="slide__img img-fluid" style="background-image:url(images/brush3.jpg)"></div></figure>
+      <header class="slide__header">
+        <h2 class="slide__title">
+          <span class="title-line"><span>Slide Two</span></span>
+          <span class="title-line"><span>Dood Mood</span></span>
+        </h2>
+      </header>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide__content">
+      <figure class="slide__figure"><div class="slide__img img-fluid" style="background-image:url(images/brush2.jpg)"></div></figure>
+      <header class="slide__header">
+        <h2 class="slide__title">
+          <span class="title-line"><span>This Right</span></span>
+          <span class="title-line"><span>Here Makes Three</span></span>
+        </h2>
+      </header>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide__content">
+      <figure class="slide__figure"><div class="slide__img img-fluid" style="background-image:url(images/brush1.jpg)"></div></figure>
+      <header class="slide__header">
+        <h2 class="slide__title">
+          <span class="title-line"><span>How Now</span></span>
+          <span class="title-line"><span>Part Four More</span></span>
+        </h2>
+      </header>
+    </div>
+  </section>
+</section>
+</main>
+</div>
+<!-- <div class="circle2">
+<img src="images/hround_dot1.png" class="img-fluid">
+</div>  -->
+
+<div class="waveWrapper waveAnimation">
+  <div class="waveWrapperInner bgTop">
+    <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+  </div>
+  <div class="waveWrapperInner bgMiddle">
+    <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+  </div>
+  <div class="waveWrapperInner bgBottom">
+    <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+  </div>
+</div>
+</div>
 
 
-  <div class="ag-format-container-fluid">
 
-
-
-  <div id="header">
+<div id="header">
         <!-- container -->
         <div class="container">
             <!-- row -->
@@ -64,25 +122,34 @@ include 'head.php'; ?>
                         <div class="input-group search">
                             <input type="text" class="form-control" name="search" placeholder="Search for...">
                             <span class="input-group-btn">
-                                <input class="btn btn-default" width="50px" type="submit" value="Search" />
+                            <div class="td" id="s-cover" type="submit" value="Search">
+                            <button type="submit">
+                              <div id="s-circle"></div>
+                              <span></span>
+                            </button>
+                          </div>
+                                <!-- <input class="btn btn-default" width="50px" type="submit" value="Search" /> -->
                             </span>
-                        </div>
+                       
+                       
+                          </div>
                     </form>
                 </div>
+
+
+
+
+
                 <div class="col-md-4">
                     <ul class="header-info">
                         <li class="dropdown">
                             <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                                <?php
-                                if (session_status() == PHP_SESSION_NONE) {
-                                    session_start();
-                                }
-                                if (isset($_SESSION["user_role"])) { ?>
+                               
+                                <?php if (isset($_SESSION["user_role"])) { ?>
                                     Hello <?php echo $_SESSION["username"]; ?><i class="caret"></i>
                                 <?php  } else { ?>
                                     <i class="fa fa-user"></i>
                                 <?php  } ?>
-
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- Trigger the modal with a button -->
@@ -148,24 +215,99 @@ include 'head.php'; ?>
                     </div>
                 </div>
                 <!-- /Modal -->
+                
             </div>
         </div>
     </div>
 
 
+<!-- START HOME_PAGE -->
+<div class="hpage">
+<div class="homepage">
+    <div class="text-content">
+      <h2>Learn To Enjoy,<br>Every Moment Of Your Life</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum facere in nam, officiis aspernatur consectetur aliquid sequi possimus et. Sint.</p>
+    </div>
+</div>
+</div>
 
+<!-- END HOME_PAGE -->
+<!-- 
+    <div id="header-menu">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="menu-list">
+                <?php
+                    $db = new Database();
+                    $db->select('sub_categories','*',null,'cat_products > 0 AND show_in_header = "1"',null,null);
+                    $result = $db->getResult();
+                    if(count($result) > 0){
+                        foreach($result as $res){ ?>
+                            <li><a href="category.php?cat=<?php echo $res['sub_cat_id']; ?>"><?php echo $res['sub_cat_title']; ?></a></li>
+                        <?php    }
+                    } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> -->
 
-
-
-
-
-
-
-
+<div class="catagory">
+  <div class="container">
     <div class="row">
-    <ul class="ag-cards_list">
+
+    <div class="all">
+ <!-- <div class="catleft"> -->
+
+        <div class="left4 col-md-1 col-sm-3 col-xs-4">
+          <div class="cattext">ABC 2</div>
+        </div>
+         <div class="left3 col-md-1 col-sm-3 col-xs-4">
+          <div class="cattext">ABC</div>
+        </div>
+        <div class="left2 col-md-1 col-sm-3 col-xs-4">
+          <div class="cattext">Hosting</div>
+        </div>
+        <div class="left1 col-md-1 col-sm-3 col-xs-4">
+          <div class="cattext">Web Design</div>
+        </div>
+ <!-- </div> -->
+        <div class="center col-md-1">
+          <div class="explainer"><span><img src="images/catagory.png" class="img-fluid"> CATAGORY</span></div>
+          <div class="cattext">Frontend Development</div>
+          </div>
+
+  <!-- <div class="catright"> -->
+        <div class="right1 col-md-1 col-sm-3 col-xs-4">
+          <div class="cattext">Backend Development</div>
+        </div>
+        <div class="right2 col-md-1 col-sm-3 col-xs-4">
+          <div class="cattext">SEO</div>
+        </div>
+        <div class="right3 col-md-1 col-sm-3 col-xs-4">
+          <div class="cattext">XYZ</div>
+        </div>
+        <div class="right4 col-md-1 col-sm-3 col-xs-4">
+          <div class="cattext">XYZ 2</div>
+        </div>
+        
+  <!-- </div> -->
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<!-- START CATAGORY -->
+<!-- <div class="ag-cards-block">
+<div class="ag-format-container-fluid">
+    <div class="row">
+    <ul class="ag-cards_list"> -->
  <!-- 1 -->   
-      <li class="ag-cards_item ag-cards_item__one">
+      <!-- <li class="ag-cards_item ag-cards_item__one">
         <div class="col-md-2 col-sm-4 ag-cards_info">
           <picture class="ag-cards_picture">              
               <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
@@ -175,10 +317,10 @@ include 'head.php'; ?>
             <span class="ag-cards_text ag-cards_text__btn">1_Product</span>
           </div>
         </div>
-      </li>
+      </li> -->
 
 <!-- 2 -->
-<li class="ag-cards_item ag-cards_item__two">
+<!-- <li class="ag-cards_item ag-cards_item__two">
   <div class="col-md-2 col-sm-4 ag-cards_info">
     <picture class="ag-cards_picture">              
         <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
@@ -188,11 +330,11 @@ include 'head.php'; ?>
       <span class="ag-cards_text ag-cards_text__btn">2_Product</span>
     </div>
   </div>
-</li>
+</li> -->
 
 <!-- 3 -->
 
-      <li class="ag-cards_item ag-cards_item__three">
+      <!-- <li class="ag-cards_item ag-cards_item__three">
         <div class="col-md-2 col-sm-4 ag-cards_info">
           <picture class="ag-cards_picture">              
               <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
@@ -202,10 +344,10 @@ include 'head.php'; ?>
             <span class="ag-cards_text ag-cards_text__btn">3_Product</span>
           </div>
         </div>
-      </li>
+      </li> -->
 
       <!-- 4 -->
-        
+<!--         
             <li class="ag-cards_item ag-cards_item__four">
               <div class="col-md-2 col-sm-4 ag-cards_info">
                 <picture class="ag-cards_picture">              
@@ -216,9 +358,9 @@ include 'head.php'; ?>
                   <span class="ag-cards_text ag-cards_text__btn">4_Product</span>
                 </div>
               </div>
-            </li>
+            </li> -->
 <!-- 5 -->
-      <li class="ag-cards_item ag-cards_item__five">
+      <!-- <li class="ag-cards_item ag-cards_item__five">
         <div class="col-md-2 col-sm-4 ag-cards_info">
           <picture class="ag-cards_picture">              
               <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive alt="Oligarch" class="ag-cards_img">
@@ -228,9 +370,9 @@ include 'head.php'; ?>
             <span class="ag-cards_text ag-cards_text__btn">5_Product</span>
           </div>
         </div>
-      </li>
+      </li> -->
 <!-- 6 -->
-            <li class="ag-cards_item ag-cards_item__six">
+            <!-- <li class="ag-cards_item ag-cards_item__six">
               <div class="col-md-2 col-sm-4 ag-cards_info">
                 <picture class="ag-cards_picture">
                     <img src="images/brushpng1.png" Dream width="150px" height="100px"Alive class="ag-cards_img">
@@ -245,11 +387,61 @@ include 'head.php'; ?>
           </ul>
           </div>
           </div>
-        </div>
-      </div>
+         </div>
+      </div> -->
+
+
+      <div class="pcard">
+    <div class="card">
+      <ul>
+      <?php                         
+            $db = new Database();
+            $db->select('products','*',null,null,'product_id DESC',9);
+            $result = $db->getResult();
+            if(count($result) > 0){
+                foreach($result as $row){ ?>
+        <li>
+          <div class="details">
+            <h2><a href="single_product.php?pid=<?php echo $row['product_id']; ?>"><?php echo substr($row['product_title'],0,25),'...'; ?></a></h2>
+            </h2>
+          <p>
+            <a href="single_product.php?pid=<?php echo $row['product_id']; ?>">
+            <?php echo substr(html_entity_decode($row['product_desc']),0,100),'...'; ?>
+            </a>
+          </p>
+            <h3>
+              <?php echo $cur_format; ?> <?php echo $row['product_price']; ?>
+            </h3>
+            <img src="images/pagepng1.png">
+            <!-- <a href="single_product.php?pid=<?php echo $row['product_id']; ?>">
+                  <img class="pic-1" src="product-images/<?php echo $row['featured_image']; ?>">
+            </a> -->
+            <div class="purchase">
+               <a href="<?php echo $row['product_id'];?>"><img src="images/buy.png" class="img-fluid"></a>
+
+              <!-- <a href="#"><img src="images/buy.png" class="img-fluid"></a>  -->
+              <a href="#"><img src="images/add-to-cart.png" class="img-fluid"></a>
+            </div>
+          </div>
+          <?php    }
+                    }else{
+                } ?>
+        </li>
+      </ul>
+    </div>
+</div>
+
+
+      <div class="fvideo">
+		<video autoplay muted loop>
+			<source src="images/spapermakeing_Slomo.mp4" type="video/mp4" id="bg">
+		</video>  
+		<!-- <img src="images/mountain.png" id="mountain"> -->
+		<img src="images/layer_61.png" id="tree">
+		<h1 id="text">IT's SᑭEᑕIᗩᒪᒪY ᖴOᖇ YOᑌ</h1>
+</div>
 
 <!-- END product catagori -->
-
 
 		<!-- START fimg section -->
 
@@ -257,54 +449,173 @@ include 'head.php'; ?>
 <div id="fpage">
 <div class="container-fluid">
   <div class="row">
-  
-  <div class="col-md-6 fpage_left position-relative"> 
 
-    <img src="images/donet4.png"  class="img-fluid" alt="">
-                                
-    <div class="position-absolute">
-   
-    <h1 class="display-1">hello</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <a class="donet"> donet now</a>     
-    </div>
+  <div class="col-md-6 fpage_left"> 
+    <a href="#"><img src="images/donet5.png" class="img-fluid" alt=""></a>
 </div>
 
-    <div class="col-md-6 fpage_right position-relative">
-    <img src="images/fpage1.png"  class="img-fluid" alt="">
+    <div class="col-md-6 fpage_right">
+    <img src="images/fpage1.png" class="img-fluid" alt="">
     </div>
     </div>
   </div>
+</div>
 </div>
 
 
 <!-- END fimg section -->
 
-<div class="fvideo">
-		<video autoplay muted loop>
-			<source src="images/smakebrush.mp4" type="video/mp4" id="bg">
-		</video>  
-		<!-- <img src="images/mountain.png" id="mountain"> -->
-		<img src="images/layer_61.png" id="tree">
-		<h1 id="text">ᗪᖇEᗩᗰ ᗩᒪIᐯE</h1>
+
+<!-- <img src="images/headwave4.png" width="100%" class="wave"> -->
+
+<!-- START PRO-CARD-LIST -->
+ 
+<!--<div class="pcard">
+<main>
+  <div class="cards">
+    
+
+ 1 
+   <a class="stack" href="#" >
+    <div class="card top">
+      <img src="images/paper1.jpg" class="img-fluid" alt="">
+        <div class="contents">
+          <h2><strong>Lorem ipsum dolor sit amet.</strong>xyz</h2>
+        <span></span><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, nobis!</p> 
+        </div>
+      </div>
+            <div class="card mid-top">
+            <div class="contents"></div>
+            </div>
+                <div class="card mid-bottom">
+                <div class="contents"></div>
+                </div>
+                    <div class="card bottom">
+                    <div class="contents"></div>
+                    </div>
+      <div class="card shadow"></div></a> -->
+<!-- END 1 -->
+
+	<!-- 
+<a class="stack" href="#" >
+    <div class="card top">
+      <img src="images/paper1.jpg" class="img-fluid" alt="">
+        <div class="contents">
+          <h2><strong>Lorem ipsum dolor sit amet.</strong>xyz</h2>
+         <span></span><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, nobis!</p> 
+        </div>
+      </div>
+            <div class="card mid-top">
+            <div class="contents"></div>
+            </div>
+                <div class="card mid-bottom">
+                <div class="contents"></div>
+                </div>
+                    <div class="card bottom">
+                    <div class="contents"></div>
+                    </div>
+      <div class="card shadow"></div></a>
+ 
+
+
+
+  </div>
+  </main>
 </div>
-  
-<img src="images/headwave4.png" width="100%" class="wave">
+-->
+
+
+<!-- END PRO-CARD-LIST -->
+
+<!-- START product card -->
+
+
+<!-- card -->
 
 
 
-<!-- <video id="slider" muted autoplay loop>
-            <source src="images/smakebrush.mp4" type="video/mp4">  
-</video> -->
+
+<!-- 
+
+        <li>
+          <div class="details">
+            <h2>LeBron 16</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, tempora!</p>
+            <h3>Rs.185</h3>
+            <img src="images/brushpng1.png">
+            <div class="purchase">
+              <button>abc</button>  
+              <button>xyz</button>
+            </div>
+        </li>
+        <li>
+          <div class="details">
+            <h2>Nike Epic React Flyknit</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, tempora!</p>
+            <h3>Rs.150</h3>
+            <img src="images/pagepng1.png">
+            <div class="purchase">
+              <button>abc</button>  
+              <button>xyz</button>
+            </div>
+          </div>
+        </li> -->
 
 
+
+
+
+<!-- <div class="pro-card">
+    <div class="container">
+    <div class="con">
+    <div class="row pro-card">
+      <div class="card">      
+         <div class=" left col-md-6">
+                <div class="sneaker">
+                    <img src="images/bookpng1.png" class="img-fluid" alt="Book">
+                </div>
+        </div>
+        <div class="right col-md-6">
+            <div class="info">
+                <h1 class="title">BOOK</h1>
+                <p>PRODUCT -ABC</p>
+                <div class="sizes">
+                    <ul>
+                        <li class="csize">SIZE</li>
+                        <li class="csize">7</li>
+                        <li class="csize">8</li>
+                        <li class="csize">9</li>
+                        <li class="csize">10</li>
+                        <li class="csize">11</li>
+                      </ul>
+                </div>
+
+                <div class="rs">
+                    <h4><span></span>Rs:-150</h4>
+                    <h4 class="dis"><span></span>MRP.200</h4>
+                </div> 
+                
+                <div class="purchase">     
+                    <a href="#"><button>xyz</button></a>
+                    <a href="#"><button>xyz</button></a>
+                </div>
+            </div>
+         </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div> -->
+<!-- 1 -->
+
+<!-- END product card -->
 <!-- STARTfeadin -->
 
-<div class="card_list">
+<!-- <div class="card_list">
 <div class="card_item item card_item_one">
   <div class="card_info">
     <picture class="card_picture">
-        <img src="images/chairpng.png" alt="" width="550px" height="350px">
+        <img src="images/chairpng.png" class="img-fluid" alt="" width="550px" height="350px">
     </picture>
     <button class="card_btn">
     1button
@@ -315,7 +626,7 @@ include 'head.php'; ?>
 <div class="card_item item card_item_two">
 <div class="card_info">
 <picture class="card_picture">
-    <img src="images/chairpng.png" width="550px" height="350px">
+    <img src="images/chairpng.png" class="img-fluid" width="550px" height="350px">
 </picture>
 <button class="card_btn">
 2  button
@@ -327,7 +638,7 @@ include 'head.php'; ?>
 <div class="card_item item card_item_three">
 <div class="card_info">
 <picture class="card_picture">
-  <img src="images/chairpng.png" width="550px" height="350px">
+  <img src="images/chairpng.png" class="img-fluid" width="550px" height="350px">
 </picture>
 <button class="card_btn">
 3  button
@@ -338,7 +649,7 @@ include 'head.php'; ?>
 <div class="card_item item card_item_four">
 <div class="card_info">
 <picture class="card_picture">
-    <img src="images/chairpng.png" alt="" width="550px" height="350px">
+    <img src="images/chairpng.png" class="img-fluid" alt="" width="550px" height="350px">
 </picture>
 <button class="card_btn">
 4 button
@@ -346,11 +657,14 @@ include 'head.php'; ?>
 </div>
 </div>
 
-</div>
+</div> -->
 <!--END frad-in -->
 
+
+
+
 <!-- Start Banner -->
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="banner-content">   
@@ -400,9 +714,7 @@ include 'head.php'; ?>
   <span class="dot"></span> 
 </div>
 
-
-</div>
-
+</div> -->
 <!-- End banner -->
 
 <!-- start  ALL product -->
@@ -444,46 +756,10 @@ include 'head.php'; ?>
     </div>
 </div>
 
+
 <script src="js/custom.js"></script>
 
-<!-- 
-<div class="product-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="section-head">Latest Products</h2>
-                <div class="latest-carousel owl-carousel owl-theme">
-                    <?php
-            $db = new Database();
-            $db->select('products','*',null,null,'product_id DESC',6);
-            $result = $db->getResult();
-            if(count($result) > 0){
-                foreach($result as $row){ ?>
-                    <div class="product-grid latest item">
-                        <div class="product-image popular">
-                            <a class="image" href="single_product.php?pid=<?php echo $row['product_id']; ?>">
-                                <img class="pic-1" src="product-images/<?php echo $row['featured_image']; ?>">
-                            </a>
-                            <div class="product-button-group">
-                                <a href="single_product.php?pid=<?php echo $row['product_id']; ?>" ><i class="fa fa-eye"></i></a>
-                                <a href="" class="add-to-cart" data-id="<?php echo $row['product_id']; ?>"><i class="fa fa-shopping-cart"></i></a>
-                                <a href="" class="add-to-wishlist" data-id="<?php echo $row['product_id']; ?>"><i class="fa fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="title">
-                                <a href="single_product.php?pid=<?php echo $row['product_id']; ?>"><?php echo substr($row['product_title'],0,25),'...'; ?></a>
-                            </h3>
-                            <div class="price"><?php echo $cur_format; ?> <?php echo $row['product_price']; ?></div>
-                        </div>
-                    </div>
-        <?php    }
-            }?>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
 
-<?php include 'footer.php'; ?>
+
+<!-- <?php include 'footer.php'; ?> -->
 
