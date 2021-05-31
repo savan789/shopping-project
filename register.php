@@ -6,7 +6,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['user_role'] == 'user') {
     header("Location: " . $hostname."/user_profile.php");
 }else{
 
-include 'header.php'; ?>
+include 'head.php'; ?>
 <div class="container">
     <div class="row">
         <div class="col-md-offset-3 col-md-6">

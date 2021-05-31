@@ -25,8 +25,8 @@ if(isset($_SESSION['admin_name'])) {
                 <div class="col-md-offset-3 col-md-6"> 
                     <div class="flogin">   
                          
-                <img src="images/FORM.PNG">
-                <h1 class="logo">ᗪᖇEᗩᗰ ᗩᒪIᐯE</h1>   
+                <img src="images/FORM3.PNG">
+                <!-- <h1 class="logo">ᗪᖇEᗩᗰ ᗩᒪIᐯE</h1>    -->
                     <div class="login-form">
                         
                         <!-- Form -->

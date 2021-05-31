@@ -13,14 +13,14 @@ include 'header.php'; ?>
                     <label for="">Product Category</label>
                     <?php
                     $db = new Database();
-                    $db->select('categories','*',null,null,'categories.cat_id DESC',null);
+                    $db->select('categories','*',null,null,'categories.cat_id',null);
                     // $sql = "SELECT * FROM categories ORDER BY categories.cat_id DESC";
                     $categories = $db->getResult();?>
                     <select class="form-control product_category" name="product_cat">
                         <option value="" selected disabled>Select Category</option>
                         <?php if ($categories > 0) {  
                             foreach($categories as $category) { ?>
-                            <option value="<?php echo $category['cat_id']; ?>"><?php echo $category['cat_title']; ?></option>
+                            <option value="<?php echo $category['cat_id']; ?>"> <?php echo $category['cat_title']; ?></option>
                             <?php } 
                             } ?>
                     </select>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .catagory .container{
+  padding:0px;
+  margin:0px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.catagory {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+
+.explainer {
+  font-weight: 300;
+  color: #000;
+  transition: all .6s ease;
+  width: 100%;
+  height: 100%;
+  background-color: #303050;
+  background-image: radial-gradient(circle at center top, #cce, #33a);
+  border-radius: 10px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+
+.all {
+/*    background-color:#ff000066; */
+   display: flex;
+   perspective: 10px;
+   transform: perspective(100px) rotateX(20deg);
+   will-change: perspective;
+   perspective-origin: center center;
+   transition: all 1.3s ease-out;
+   transform-style: preserve-3d;
+   width:100vw;
+   justify-content: center;
+   align-items: center;
+   flex-direction: row;
+}
+
+.all:hover {
+  perspective: 1000px;
+  transition: all 1s cubic-bezier(0.42, 0, 1, 0.77);
+  transform: perspective(10000px) rotateX(0deg);
+}
+  .all:hover .cattext {
+    color:#000;
+    font-weight:1000;
+    opacity:1;
+   }
+  .all:hover > div {
+    opacity: 1;
+    transition-delay: 0s;
+   }
+
+  .all:hover .explainer {
+    opacity: 0;
+  }
+
+ .center, .left1, .left2, .left3, .left4, .right1, .right2, .right3, .right4 {
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 20px 5px rgba(100, 100, 255, 0.5);
+  opacity: 0;
+  transition: all .3s ease;
+  transition-delay: 1s;
+  position: relative;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+/*   background-color: #58d; */
+  cursor: pointer;
+  background-blend-mode: color-burn;
+  padding:0px;
+ }
+ .center:hover, .left1:hover, .left2:hover, .left3:hover, .left4:hover, .right1:hover, .right2:hover, .right3:hover, .right4:hover{
+    box-shadow: 0 0 30px 10px rgba(100, 100, 255, 0.6);
+    background-color: #ccf;
+   }
+
+.cattext {
+  transform: translateY(0px);
+  font-size: 12px;
+  opacity: 0;
+  transition: all .5s ease;
+  bottom: -5vw;
+  left: 0px;
+  position: absolute;
+  will-change: transform;
+  color: #000;
+  text-shadow: 0 0 5px rgba(100, 100, 255, 0.6);
+}
+
+.left4{
+  transform: translateX(-80px) translateZ(-100px) rotateY(-20deg);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/organization-512.png);
+}
+.left3{
+  transform: translateX(-60px) translateZ(-75px) rotateY(-15deg);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/organization-512.png);
+}
+
+.left2{
+  transform: translateX(-40px) translateZ(-50px) rotateY(-10deg);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/organization-512.png);
+}
+
+.left1 {
+  transform: translateX(-20px) translateZ(-25px) rotateY(-5deg);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/creative_draw-512.png); }
+
+.center {
+  opacity: 1;
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/app_window-512.png);
+ }
+
+.right1 {
+  transform: translateX(20px) translateZ(-25px) rotateY(5deg);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/cloud_weather-512.png);
+}
+.right2 {
+  transform: translateX(40px) translateZ(-50px) rotateY(10deg);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/search-512.png);
+}
+.right3 {
+  transform: translateX(60px) translateZ(-75px) rotateY(15deg);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/search-512.png);
+}
+.right4 {
+  transform: translateX(80px) translateZ(-100px) rotateY(20deg);
+  background-image: url(https://cdn3.iconfinder.com/data/icons/other-icons/48/search-512.png);
+}
+
+
+@media(max-width:900px){
+  .cattext {
+  font-size: 10px;
+  opacity: 0;
+  transition: all .5s ease;
+ }
+}
+
+
+
+@media(max-width:770px){
+  .left1, .left2, .left3, .left4, .right1, .right2, .right3, .right4 {
+  width:100vw;
+  height: 12vh;
+}
+  .all {
+   perspective: 100px;
+   transform: perspective(1000px) rotateX(20deg);
+   transform-style: preserve-3d;
+   width:50vw; 
+}
+
+.all:hover {
+  perspective: 10px;
+  transition: all 1s cubic-bezier(0.42, 0, 1, 0.77);
+  transform: perspective(10px) rotateX(0deg);
+  margin-bottom:10vh;
+}
+
+ .catagory {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+
+.cattext{
+  bottom:-7vh;
+  max-width:100px;
+  text-align:center;
+  font-size:15px;
+}
+
+  .left4{
+  left:20vw;
+    top:20vh;
+  transform: translateX(-0px) translateZ(-0px) rotateY(-0deg);
+  }
+.left3{
+  left:30vw;
+  top:20vh;
+  transform: translateX(-0px) translateZ(-0px) rotateY(-0deg);
+  }
+
+.left2{
+  left:40vw;
+  top:20vh;
+  transform: translateX(-0px) translateZ(-0px) rotateY(-0deg);
+}
+
+.left1 {
+  left:50vw;
+  top:20vh;
+  transform: translateX(-0px) translateZ(-0px) rotateY(-0deg);
+}
+.center {
+  opacity: 1;
+  }
+
+.right1 {
+  top:40vh;
+  left:-45vw;
+  transform: translateX(-00px) translateZ(-0px) rotateY(0deg);
+
+}
+.right2 {
+  top:40vh;
+  left:-35vw;
+  transform: translateX(0px) translateZ(-0px) rotateY(0deg);
+}
+.right3 {
+  top:40vh;
+  left:-25vw;
+  transform: translateX(0px) translateZ(-0px) rotateY(0deg);
+}
+.right4 {
+  top:40vh;
+  left:-30%;
+  transform: translateX(0px) translateZ(-0px) rotateY(0deg);
+}
+
+}
+
+
+
+@media(max-width:580px){
+  .cattext {
+  transform: translateY(0px);
+  font-size: 12px;
+  font-weight:1000;
+  opacity: 0;
+  transition: all .5s ease;
+  bottom: -10vw;
+  left: 0px;
+  position: absolute;
+  will-change: transform;
+ text-align:center;
+  color: #000;
+  text-shadow: 0 0 5px rgba(100, 100, 255, 0.6);
+}
+  .all {
+    margin-bottom:10vh;
+   perspective: 100px;
+   transform: perspective(1000px) rotateX(20deg);
+   transition: all 1.5s ease-out;
+   transform-style: preserve-3d;
+   width:170vw; 
+   justify-content: center;
+   align-items: center;
+   flex-direction: row;
+}
+
+.all:hover {
+  perspective: 10px;
+  transition: all 1s cubic-bezier(0.42, 0, 1, 0.77);
+  transform: perspective(10px) rotateX(0deg);
+}
+
+ .catagory {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+.left1, .left2, .left3, .left4, .right1, .right2, .right3, .right4 {
+  width:100vw;
+  height: 10vh;
+}
+  .left4{
+  left:25%;
+ 
+}
+.left3{
+  left:27%;
+  
+}
+
+.left2{
+  left:30%;
+
+}
+
+.left1 {
+  left:32%;
+ 
+}
+.center {
+  opacity: 1;
+ }
+
+.right1 {
+ 
+  left:-30%;
+}
+.right2 {
+ 
+  left:-28%;
+ }
+.right3 {
+
+  left:-26%;
+ }
+.right4 {
+ 
+  left:-24%;
+ }
+}
+
+@media(max-width:480px){
+.cattext{
+  font-size:10px;
+}
+}
+
+@media(max-width:330px){
+  .all:hover {
+    padding-bottom:50vh;
+    }
+    
+.cattext{
+  font-size:7px;
+}
+  .left4{
+  left:25%;
+
+  }
+.left3{
+  left:28%;
+
+  }
+
+.left2{
+  left:31%;
+  
+}
+
+.left1 {
+  left:34%;
+  
+}
+
+.right1 {
+
+  left:-33%;
+}
+.right2 {
+ 
+  left:-30%;
+}
+.right3 {
+
+  left:-27%;
+}
+.right4 {
+ 
+  left:-24%;
+}
+ .catagory .center {
+height:10vh;
+}
+}
+
+
+@media(max-width:250px){
+  .all:hover {
+    padding-bottom:50vh;
+    }
+    
+.cattext{
+  font-size:7px;
+}
+  .left4{
+  left:24%;
+
+  }
+.left3{
+  left:28%;
+
+  }
+
+.left2{
+  left:33%;
+  
+}
+
+.left1 {
+  left:38%;
+  
+}
+
+.right1 {
+
+  left:-37%;
+}
+.right2 {
+ 
+  left:-32%;
+}
+.right3 {
+
+  left:-27%;
+}
+.right4 {
+ 
+  left:-22%;
+}
+ .catagory .center {
+height:15vh;
+}
+}
+    </style>
+<body>
+    <div class="container">
+        <!-- <?php
+        $db = new Database();
+        $db->select('categories', '*', null, null, 'categories.cat_id', null);
+        $sql = "SELECT * FROM categories ORDER BY categories.cat_id DESC";
+        $categories = $db->getResult();
+        $catcount = count($categories);
+        echo $catcount, "<br>";
+
+        $x = 0;
+        echo "Hello";
+        foreach ($categories as $category) {
+?> -->
+
+    <!-- <?php
+            echo ?>
+            <br>Hello </t>
+             <div class='all'>
+                <div class='left'>
+                <?php   $catcount ?> "col-md-1 col-sm-3 col-xs-4'>
+                    <div class='cattext'>hhh</div>
+                </div>
+            </div>
+      <?php  }
+        ?> -->
+    </div>
+    <!------------------------ START CATAGORY (4) ----------------------------->
+    <div class="catagory">
+        <!-- <?php
+        $db = new Database();
+        $db->select('categories', '*', null, null, 'categories.cat_id', null);
+        $sql = "SELECT * FROM categories ORDER BY categories.cat_id DESC";
+        $categories = $db->getResult();
+        $catcount = count($categories); ?> -->
+
+        <!-- $count = $categories;
+        division = $count/2
+        if (remiander==true){
+           parts = division-1
+        } 
+
+        assign values to left and right equally.
+       
+        class = left<$category[<id value>]>
+     -->
+
+        <div class="container">
+            <div class="row">
+                <div class="all">
+                    <!-- <div class="catleft"> -->
+
+                    <!-- <?php if ($categories) {
+                        foreach ($categories as $category) { ?> -->
+                            <div class="left4 col-md-1 col-sm-3 col-xs-4">
+                                <div class="cattext">
+                                    ccc
+                                </div>
+                            </div>
+
+                            <div class="left1 col-md-1 col-sm-3 col-xs-4">
+                                <div class="cattext">Web Design</div>
+                            </div>
+
+                            <div class="center col-md-1">
+                                <div class="explainer"><span><img src="images/new-product.png" class="img-fluid"> CATAGORY</span></div>
+                                <div class="cattext">aaa</div>
+                            </div>
+
+                            <div class="right1 col-md-1 col-sm-3 col-xs-4">
+                                <div class="cattext">Backend Development</div>
+                            </div>
+                            <div class="right2 col-md-1 col-sm-3 col-xs-4">
+                                <div class="cattext">SEO</div>
+                            </div>
+                            <div class="right3 col-md-1 col-sm-3 col-xs-4">
+                                <div class="cattext">XYZ</div>
+                            </div>
+                            <div class="right4 col-md-1 col-sm-3 col-xs-4">
+                                <div class="cattext">XYZ 2</div>
+                            </div>
+
+
+                </div>
+            </div>
+        </div>
+<?php }
+                    } ?>
+    </div>
+
+</body>
+</html>

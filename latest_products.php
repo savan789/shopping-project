@@ -16,8 +16,8 @@
                             <div class="col-md-3 col-sm-6">
                                 <div class="product-grid">
                                     <div class="product-image latest">
-                                        <a class="image" href="single_product.php?pid=<?php echo $row['product_id']; ?>">
-                                            <img class="pic-1" src="product-images/<?php echo $row['featured_image']; ?>">
+                                        <a class="image" href="single_product.php?pid=<?php echo $row['product_id']; ?>"class="img-fluid">
+                                            <img class="pic-1" src="product-images/<?php echo $row['featured_image']; ?>"class="img-fluid">
                                         </a>
                                         <div class="product-button-group">
                                             <a href="single_product.php?pid=<?php echo $row['product_id']; ?>" ><i class="fa fa-eye"></i></a>

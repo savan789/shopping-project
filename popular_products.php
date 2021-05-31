@@ -10,6 +10,7 @@
                     $limit = 8;
                     $db = new Database();
                     $db->select('products','*',null,'product_views > 0 AND product_status = 1 AND qty > 0','product_views DESC',$limit);
+                    
                     $result = $db->getResult();
                     if(count($result) > 0){
                         foreach($result as $row){ ?>

@@ -62,11 +62,18 @@
             </div>
         </div>
         <!-- /HEADER -->
+
+
+
+
         <div id="admin-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <!-- Menu Bar Start -->
                     <div class="col-md-2 col-sm-3" id="admin-menu">
+
+       
+            <nav class="blend">
                          <ul class="menu-list">
                             <li <?php if(basename($_SERVER['PHP_SELF']) == "dashboard.php") echo 'class="active"'; ?>><a href="dashboard.php">Dashboard</a></li>
                             <li <?php if(basename($_SERVER['PHP_SELF']) == "products.php") echo 'class="active"'; ?>><a href="products.php">Products</a></li>
@@ -77,7 +84,15 @@
                             <li <?php if(basename($_SERVER['PHP_SELF']) == "users.php") echo 'class="active"'; ?>><a href="users.php">Users</a></li>
                             <li <?php if(basename($_SERVER['PHP_SELF']) == "options.php") echo 'class="active"'; ?>><a href="options.php">Options</a></li>
                         </ul>
+                        </nav>
+
                     </div>
                     <!-- Menu Bar End -->
                     <!-- Content Start -->
-                    <div class="col-md-10 col-sm-9   clearfix" id="admin-content">
+                    <div class="col-md-10 col-sm-9 clearfix" id="admin-content">
+                 
+
+ 
+                </body>
+        
+ </html>

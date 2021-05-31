@@ -1,3 +1,5 @@
+
+<div class="fullbody">
 <?php
 // include header file
 include 'header.php'; ?>
@@ -21,7 +23,7 @@ include 'header.php'; ?>
 <div class="container-fluid">
 <div class="row">
         <div class="col-md-12 ">         
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
                 <?php
                     $db = new Database();
                     $db->select('products','COUNT(product_id) as p_count',null,null,null,0);
@@ -34,7 +36,7 @@ include 'header.php'; ?>
                     <span class="count-tag">Products</span></a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
                 <?php
                     $db = new Database();
                     $db->select('categories','COUNT(cat_id) as c_count',null,null,null,0);
@@ -42,12 +44,12 @@ include 'header.php'; ?>
                 ?>
                 <div class="detail-box">
                 <a href="category.php">
-                <img src="images/categories" height="100" width="100px">
+                <img src="images/categories">
                     <span class="count"><?php echo $category[0]['c_count']; ?></span>
                     <span class="count-tag">Categories</span></a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
                 <div class="detail-box">
                     <?php
                         $db = new Database();
@@ -55,13 +57,13 @@ include 'header.php'; ?>
                         $sub_category = $db->getResult();
                     ?>
                     <a href="sub_category.php">
-                    <img src="images/subcategories" height="100" width="100px">
+                    <img src="images/subcategories">
                     <span class="count"><?php echo $sub_category[0]['sub_count']; ?></span>
                     <span class="count-tag">Sub Categories</span>
                     </a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
                 <div class="detail-box">
                     <?php
                         $db = new Database();
@@ -69,13 +71,13 @@ include 'header.php'; ?>
                         $brands = $db->getResult();
                     ?>
                     <a href="brands.php">
-                    <img src="images/brand" height="100" width="100px">
+                    <img src="images/brand">
                     <span class="count"><?php echo $brands[0]['b_count']; ?></span>
                     <span class="count-tag">Brands</span>
                                 </a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
                 <div class="detail-box">
                     <?php
                         $db = new Database();
@@ -83,13 +85,13 @@ include 'header.php'; ?>
                         $orders = $db->getResult();
                     ?>
                     <a href="orders.php">
-                    <img src="images/order" height="100" width="100px">
+                    <img src="images/order">
                     <span class="count"><?php echo $orders[0]['o_count']; ?></span>
                     <span class="count-tag">Orders</span>
                                 </a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
                 <div class="detail-box">
                     <?php
                         $db = new Database();
@@ -97,7 +99,7 @@ include 'header.php'; ?>
                         $users = $db->getResult();
                     ?>
                     <a href="users.php">
-                    <img src="images/users" height="100" width="100px">
+                    <img src="images/users">
                     <span class="count"><?php echo $users[0]['u_count']; ?></span>
                     <span class="count-tag">Users</span>
                                 </a>
@@ -153,8 +155,9 @@ include 'header.php'; ?>
 
 
 
-<?php
-//    include footer file
-    include "footer.php";
+    <?php
+    //    include footer file
+        include "footer.php";
 
-?>
+    ?>
+    </div>

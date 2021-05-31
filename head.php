@@ -36,8 +36,8 @@ if (!empty($header[0]['currency_format'])) {
 
 <body>
     <!-- HEADER -->
-    
-    <!-- <div id="header-menu">
+<!--     
+    <div id="header-menu">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">

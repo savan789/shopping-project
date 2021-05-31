@@ -56,7 +56,7 @@ if(isset($_SESSION['user_id']) && $_SESSION['user_role'] == 'user') {
                                     </tr>
                                     <?php } ?>
                                     <tr>
-                                        <td colspan="3" align="right"><b>Total Amount</b></td>
+                                        <td colspan="3"><b>Total Amount</b></td>
                                         <td><b><?php echo $cur_format.' '.$row[$i]['total_amount']; ?></b></td>
                                     </tr>
                                 </tbody>

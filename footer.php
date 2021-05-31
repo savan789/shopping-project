@@ -1,7 +1,7 @@
 <div id ="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <?php
                     $db = new Database();
                     $db->select('options','site_name,footer_text,site_desc,contact_phone,contact_email,contact_address',null,null,null,null);
@@ -9,7 +9,7 @@
                 <h3><?php echo $footer[0]['site_name']; ?></h3>
                 <p><?php echo $footer[0]['site_desc']; ?></p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <h3>Categories</h3>
                 <ul class="menu-list">
                     <?php
@@ -23,7 +23,7 @@
                     } ?>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <h3>Useful Links</h3>
                 <ul class="menu-list">
                     <li><a href="<?php echo $hostname; ?>">Home</a></li>
@@ -31,8 +31,8 @@
                     <li><a href="latest_products.php">Latest Products</a></li>
                     <li><a href="popular_products.php">Popular Products</a></li>
                 </ul>
-            </div>
-            <div class="col-md-3">
+            </div> -->
+            <div class="col-md-4">
                 <h3>Contact Us</h3>
                 <ul class="menu-list">
                     <?php if(!empty($footer[0]['contact_address'])){ ?>

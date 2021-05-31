@@ -35,6 +35,7 @@ if (!empty($header[0]['currency_format'])) {
 </head>
 
 <body>
+
     <!-- HEADER -->
     <div id="header">
         <!-- container -->
@@ -56,7 +57,12 @@ if (!empty($header[0]['currency_format'])) {
                         <div class="input-group search">
                             <input type="text" class="form-control" name="search" placeholder="Search for...">
                             <span class="input-group-btn">
-                                <input class="btn btn-default" width="50px" type="submit" value="Search" />
+                            <div class="td" id="s-cover" type="submit" value="Search">
+                            <button type="submit">
+                              <div id="s-circle"></div>
+                              <span></span>
+                            </button>
+                          </div>
                             </span>
                         </div>
                     </form>
@@ -118,7 +124,7 @@ if (!empty($header[0]['currency_format'])) {
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             <div class="modal-body">
-                                <!-- Form -->
+                                <!-- Form --->
                                 <form id="loginUser" method="POST">
                                     <div class="customer_login">
                                         <h2>login here</h2>
@@ -134,7 +140,7 @@ if (!empty($header[0]['currency_format'])) {
                                         <span>Don't Have an Account <a href="register.php">Register</a></span>
                                     </div>
                                 </form>
-                                <!-- /Form -->
+                                <!-- /Form --->
                             </div>
                         </div>
                     </div>
@@ -143,6 +149,7 @@ if (!empty($header[0]['currency_format'])) {
             </div>
         </div>
     </div>
+   
     <!-- <div id="header-menu">
         <div class="container-fluid">
             <div class="row">
@@ -157,6 +164,7 @@ if (!empty($header[0]['currency_format'])) {
                                 <li><a href="category.php?cat=<?php echo $res['sub_cat_id']; ?>"><?php echo $res['sub_cat_title']; ?></a></li>
                         <?php    }
                         } ?>
+                        
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d Card Effect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<link rel="stylesheet" href="trystyle.css">
+<body>
+
+<div class="pro-card">
+    <div class="container-fluid">
+      <div class="card">
+         <div class="left">
+                <div class="sneaker">
+                    <img src="bookpng1.png" alt="shoe">
+                </div>
+        </div>
+        <div class="right">
+            <div class="info">
+                <h1 class="title">BOOK</h1>
+                <h3>PRODUCT -ABC</h3>
+                <div class="sizes">
+                    <ul>
+                        <li>SIZE</li>
+                        <li class="csize">7</li>
+                        <li class="csize">8</li>
+                        <li class="csize">9</li>
+                        <li class="csize">10</li>
+                        <li class="csize">11</li>
+                      </ul>
+                </div>
+
+                <div class="rs">
+                    <h4><span></span>Rs:-150</h4>
+                    <h4 class="dis"><span></span>MRP.200</h4>
+                </div>
+
+                <div class="purchase">
+                    <button>xyz</button>
+                    <button>xyz</button>
+                </div>
+            </div>
+         </div>
+        </div>
+    </div>
+</div>
+    </body>
+
+
+<script>
+    //Movement Animation to happen
+ABC = document.querySelector(".card");
+container = document.querySelector(".container-fluid");
+//Items
+ title = document.querySelector(".title");
+ sneaker = document.querySelector(".sneaker img");
+ purchase = document.querySelector(".purchase");
+ description = document.querySelector(".info h3");
+ sizes = document.querySelector(".sizes");
+ rs = document.querySelector(".rs");
+
+//Moving Animation Event
+container.addEventListener("mousemove", (e) => {
+  let xAxis = (window.innerWidth / 5 - e.pageX) / 30;
+  let yAxis = (window.innerHeight / 5 - e.pageY) / 30;
+  ABC.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+});
+//Animate In
+container.addEventListener("mouseenter", (e) => {
+  ABC.style.transition = "none";
+  //Popout
+  title.style.transform = "translateZ(150px)";
+  sneaker.style.transform = "translateZ(100px) rotateZ(-360deg)";
+  description.style.transform = "translateZ(125px)";
+  sizes.style.transform = "translateZ(100px)";
+  purchase.style.transform = "translateZ(75px)"
+  purchase.style.transform = "translateZ(50px)";
+});
+//Animate Out
+container.addEventListener("mouseleave", (e) => {
+  ABC.style.transition = "all 0.5s ease";
+  ABC.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  //Popback
+  title.style.transform = "translateZ(0px)";
+  sneaker.style.transform = "translateZ(0px) rotateZ(0deg)";
+  description.style.transform = "translateZ(0px)";
+  sizes.style.transform = "translateZ(0px)";
+  rs.style.transform = "translateZ(0px)";
+  purchase.style.transform = "translateZ(0px)";
+});
+
+    </script>
+</html>

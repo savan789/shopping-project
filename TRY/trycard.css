@@ -1,0 +1,397 @@
+
+.pcard ul {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    transform-origin: top right;
+    transform: skewY(-4.398705355deg);
+    margin: 0 6.4vw 0 28%;
+    list-style: none;
+  }
+  .pcard li{
+    transform-origin: top left;
+    transform: skewY(4.398705355deg) rotatez(14.03624deg);
+    padding-top: 150%;
+    z-index: 1;
+    transition-property: z-index;
+    transition-duration: .3s;
+  }
+  .pcard .details{
+    position: absolute;
+    z-index: 2;
+    width: 98%;
+    height: 95%;
+    top: 0;
+    background-color: #DADDDF;
+    border-radius: 2vw;
+    box-shadow: inset 0px 0px 0px 7vw #FCF8F4;
+    box-sizing: border-box;
+    filter: drop-shadow(2px 6px 3px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(2px 6px 3px rgba(0, 0, 0, 0.4));
+    transform: rotate(0deg) translate(0, 0);
+    transition-property: transform;
+    transition-duration: .3s;
+  }
+  
+  .pcard h2,.pcard  h3,.pcard  img,.pcard p {
+    position: absolute;
+    z-index: 4;
+  }
+  
+  .pcard h3{
+   font-size:2em;
+    background-color: #FCF8F4;
+    padding: 1% 2.5% 2% 2.5%;
+   text-align: center;
+    right: 1%;
+    bottom: -1%;
+    transform: rotatez(-45deg);
+    transition: all 0.3s ease-in-out 
+  }
+  
+  
+  /* p:nth-child(2n+1){
+    transform: rotatez(180deg);
+    bottom: 3%;
+    right: 5%;
+  } */
+  .pcard h2{
+    text-align: center;
+    width: 100%;
+    left: -0%;
+    top: 46%;
+    transform: rotatez(-45deg);
+    line-height: 140%;
+    transition-property: top;
+     transition: all 0.3s ease-in-out 
+      }
+      .pcard img{
+    width: 84%;
+    top: 50%;
+    left: 60%;
+     transform: translateX(-70%) translateY(-105%) rotatez(-45deg);
+      transition-property: width,transform;
+      transition-duration: .3s;
+  }
+  
+  .pcard p{
+    font-size:1rem;
+    display:none;
+    text-align: center;
+    right: -15%;
+    bottom: 30%;
+    transform: rotatez(-45deg);
+    transition: all 0.5s ease-in-out 
+   }
+   .pcard li button{
+  display:none;  
+  transition: all 0.75s ease-out;
+  }
+  
+  
+  .pcard li:hover{
+    z-index: 4;
+  }
+  .pcard li:hover p{
+    font-size:4vw;
+    display:block;
+    right: -0%;
+    bottom: 30%;
+    transform: rotatez(-0deg);
+    transition: all 1s ease-in-out ;
+  }
+  .pcard li:hover h2{
+    background-color: #FCF8F4;
+    top: 32%;
+    transform: rotatez(0deg);
+  }
+  pcard li:hover h3{
+    left:0vw;   
+    background-color:transparent;
+  transform: translateX(0%) translateY(-200%) rotatez(0deg);
+  font-size: 5vw;
+  }
+  .pcard li:hover .details{
+    transform: translateX(-65%) translateY(-75%) rotatez(-45deg);
+    transform: rotate(-14.03624deg) translate(5.5%, 15%) scale(1.5);
+  
+  }
+  .pcard li:hover img{
+    width: 100%;
+    transform: translateX(-50%) translateY(-150%) rotatez(5deg);
+  }
+  
+  .pcard li:hove p{
+    transform: translateX(-125%) translateY(60%) rotatez(0deg)
+  }   
+  .pcard li:hover .purchase {
+    position:absolute;
+    bottom:1vw;
+    left: 10vw;
+    justify-content: center;
+     z-index: 4;
+    }
+    .pcard li:hover button {
+    display:inline-block;
+    margin:1rem 1rem 0  0;
+    width: 5rem;
+    padding: 0.5rem;
+    background: #f54642;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: bolder;
+    bottom:.1vw;
+    transition: all 0.75s ease-out;
+    }
+  
+  
+  @media (max-width:300px) {
+  
+    .pcard ul {
+      grid-template-columns: repeat(1,1fr);
+      grid-column-gap: 5vw;
+      margin: 0 3.9vw 0 15vw;
+    }
+    .pcard .details{
+      box-shadow: inset 0px 0px 0px 3vw #FCF8F4;
+      transform: rotate(14.03624deg) translate(0%, 0%) scale(.7);
+    }
+    .pcard li h2{
+    font-size:6vw;
+  }
+  .pcard li:hover h2{
+      background-color: #FCF8F4;
+    top: 32%;
+    transform: rotatez(0deg);
+    font-size:5vw;
+  }
+  .pcard li h2{
+    font-size:6vw;
+  }
+  .pcard li:hover h3{
+    transform: translateX(-110%) translateY(-110%) rotatez(0deg);
+    font-size: 5vw;
+  }
+  .pcard li:hover .details{
+      transform: rotate(-14.03624deg) translate(0%, 0%) scale(1.1);
+         
+  }
+  .pcard li:hover img{
+    width: 100%;
+    transform: translateX(-50%) translateY(-150%) rotatez(5deg);
+  }
+  
+  .pcard li:hover button {
+    display:inline-block;
+    margin:5vw 5vw 0  0;
+    width: 15vw;
+    padding: 1.5vw;
+    }
+    .pcard li:hover p{
+    font-size:4vw;
+    display:block;
+    right: -0%;
+    bottom: 20%;
+    transform: rotatez(-0deg)
+  }
+  
+  }
+  
+  @media (min-width:300px) {
+   
+    .pcard ul {
+      grid-template-columns: repeat(1,1fr);
+      grid-column-gap: 5vw;
+      margin: 0 3.9vw 0 15vw;
+    }
+    .pcard .details{
+      box-shadow: inset 0px 0px 0px 3vw #FCF8F4;
+      transform: rotate(14.03624deg) translate(0%, 0%) scale(.7);
+   
+    }
+    .pcard li:hover h2{
+    background-color: #FCF8F4;
+     top: 32%;
+      transform: rotatez(0deg);
+          font-size: 5vw;
+  }
+  .pcard li:hover p{
+    font-size:5vw;
+    display:block;
+    right: -0%;
+    bottom: 30%;
+    transform: rotatez(-0deg)
+  }
+  .pcard li:hover h3{
+    transform: translateX(-120%) translateY(-150%) rotatez(0deg);
+    font-size: 5vw;
+  }
+  .pcard li:hover .details{
+      transform: rotate(-14deg) translate(0%, 0%) scale(.9);       
+  }
+  .pcard li:hover img{
+    width: 100%;
+    transform: translateX(-50%) translateY(-150%) rotatez(5deg);
+  }
+  .pcard li:hover button {
+    margin:5vw 5vw 0  0;
+    width: 20vw;
+    padding: 1vh;
+    }
+  }
+  
+  @media (min-width:600px) {
+   
+    .pcard ul {
+      grid-template-columns: repeat(2,1fr);
+      grid-column-gap: 2vw;
+      margin: 0 2.8vw 0 10vw;
+    }
+    .pcard .details{
+      box-shadow: inset 0px 0px 0px 2.8vw #FCF8F4;
+    }
+    .pcard li:hover h2{
+    background-color: #FCF8F4;
+    font-size: 3vw;
+     top: 32%;
+      transform: rotatez(0deg);
+  }
+  .pcard li:hover p{
+    font-size:2.5vw;
+    display:block;
+    right: -0%;
+    bottom: 32%;
+    transform: rotatez(-0deg)
+  }
+  .pcard li:hover h3{
+    left:0vw;
+    background-color:transparent;
+    transform: translateX(0%) translateY(-250%) rotatez(0deg);
+    font-size: 3vw;
+  }
+  .pcard li:hover button {
+    margin:0 3vw 0  0;
+    width: 8vw;
+    padding: 1vh;
+    }
+  
+  }
+  
+  @media (min-width:900px) {
+  
+    .pcard ul {
+      grid-template-columns: repeat(3,1fr);
+      grid-column-gap: 1.5vw;
+      margin: 0 2.2vw 0 8vw;
+    }
+    .pcard .details{
+      box-shadow: inset 0px 0px 0px 2.2vw #FCF8F4;
+    }
+    .pcard li:hover h3{
+    transform: translateX(-130%) translateY(-150%) rotatez(0deg);
+    font-size: 2vw;
+  }
+  .pcard li:hover h2{
+    font-size: 2.4vw;
+  }
+  .pcard li:hover p{
+    font-size:1rem;
+    display:block;
+    right: -0%;
+    bottom: 25%;
+    transform: rotatez(-0deg)
+  }
+  .pcard li:hover img{
+    width: 110%;
+    transform: translateX(-60%) translateY(-150%) rotatez(5deg);
+  }
+  .pcard li:hover .purchase {
+    left: 6vw;
+    }
+  .pcard li:hover h3{
+    left:0vw;
+    background-color:transparent;
+    transform: translateX(0%) translateY(-250%) rotatez(0deg);
+    font-size: 2vw;
+  }
+    .pcard li:hover button {
+    margin:0 3vw 0  0;
+    width: 7vw;
+    padding: 1vh;
+  
+    }
+  }
+  
+  @media (min-width:1200px) {
+  
+    .pcard ul {
+      grid-template-columns: repeat(3,1fr);
+      grid-column-gap: 1vw;
+      margin: 0 1.8vw 0 6.5vw;
+    }
+    .pcard .details{
+      box-shadow: inset 0px 0px 0px 1.8vw #FCF8F4;
+    }
+    .pcard li:hover h2{
+    font-size: 2.3vw;
+  }
+  .pcard li:hover h3{
+    left:0vw;
+    background-color:transparent;
+    transform: translateX(0%) translateY(-250%) rotatez(0deg);
+    font-size: 2vw;
+  }
+  .pcard li:hover p{
+    font-size:1.7vw;
+    display:block;
+    right: -0%;
+    bottom: 30%;
+    transform: rotatez(-0deg)
+  }
+  .pcard li:hover .purchase {
+    left: 5vw;
+    }
+  
+    .pcard li:hover button {
+    margin:0 3vw 0  0;
+    width: 7vw;
+    padding: 1.5vh;
+  
+    }
+  }
+  
+  @media (min-width:1500px) {
+  
+    .pcard ul {
+      align-items: center;
+      grid-template-columns: repeat(3,1fr);
+      grid-column-gap: 3vw;
+      
+    }
+    .pcard .details{
+      box-shadow: inset 0px 0px 0px 1.5vw #FCF8F4;
+    }
+    .pcard li:hover .purchase {
+    left: 5vw;
+    }
+    .pcard li:hover h2{
+    font-size: 2vw;
+  }
+  .pcard li:hover h3{
+    left:0vw;
+    background-color:transparent;
+    transform: translateX(0%) translateY(-200%) rotatez(0deg);
+    font-size: 2vw;
+  }
+   .pcard li:hover p{
+    font-size: 1.5vw;
+  }
+  
+    .pcard li:hover button {
+    width: 7vw;
+    padding: 1.5vh;
+  
+    }
+  }
+  
