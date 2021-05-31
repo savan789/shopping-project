@@ -30,8 +30,14 @@ if (!empty($header[0]['currency_format'])) {
     <link rel="stylesheet" href="css/font-awesome.css">
     <!-- Custom stlylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+<!--  -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/demo.css" />
+    <link rel="stylesheet" href="css/component.css" />
+
 </head>
 
 <body>

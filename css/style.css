@@ -456,10 +456,10 @@ animation-duration:5s;
 #header-menu .menu-list{
 background-color:transparent;
 box-shadow: 0 5px 15px rgb(0 0 0 / 48%);
-box-shadow:aliceblue 
+box-shadow:aliceblue; 
   border-radius: 2vw;
   box-sizing: boder-box;
-  filter: drop-shadow(2px 6px 3px rgba(0, 0, 0, 0.4)); */
+  filter: drop-shadow(2px 6px 3px rgba(0, 0, 0, 0.4));
   padding: 8px 15px;
   margin: 0 -15px;
   margin-bottom:50px;

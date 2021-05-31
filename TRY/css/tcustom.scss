@@ -1,0 +1,689 @@
+
+@font-face {
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/TESLA.ttf');
+  font-family: Tesla;
+}
+@font-face {
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/PFDinTextCompPro-Medium.ttf');
+  font-family: pfd-medium;
+}
+$RT: 1.5s; // .REMOVING TRANSITION TIME
+$RTDELAY: 0.3s; // .REMOVING TRANSITION DELAY (text hiding)
+$BG-T: 1s; // .ACTIVE BACKGROUND ZOOM TRANSITION
+$TOTAL-T: $RT + $RTDELAY + $BG-T; // total effects transition before you can show text again
+@mixin bgPart() {
+  content: "";
+  display: block;
+  position: absolute;
+  background-size: cover;
+}
+@mixin bg1Part($l) {
+  left: 20% * ($l - 1);
+
+  &:before {
+    left: -100% * ($l - 1);
+  }
+}
+@mixin bg2Part($l,$t) {
+  top: 0 + (100% / 3) * ($t - 1);
+  left: 0 + (100% / 3) * ($l - 1);
+
+  &:before {
+    top: -100% * ($t - 1);
+    left: -100% * ($l - 1);
+  }
+}
+@mixin bg2PartTransition($dur, $del) {
+  transition: transform $dur ($del + $RTDELAY) cubic-bezier(.58,-0.7,.59,.95), opacity ($dur - $dur / 3) ($del + $dur/3 + 0.1s + $RTDELAY);
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  font-size: 62.5%;
+  height: 100%;
+  overflow: hidden;
+}
+button,
+input {
+  outline: none;
+  border: none;
+}
+input[type=radio] {
+  // OVERKILL
+  position: absolute;
+  top: -5000px;
+  left: -5000px;
+  opacity: 0;
+  z-index: -1000;
+}
+.slider {
+  position: relative;
+  height: 100%;
+
+  &--control {
+    z-index: 50;
+    position: absolute;
+    top: calc(50% - 2rem);
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+
+    &.left {
+      left: 4rem;
+    }
+    &.right {
+      right: 4rem;
+    }
+
+    label {
+      z-index: 2000;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transform: scale(0);
+      transition: transform 0s 0s;
+    }
+  }
+
+  &--el {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform $TOTAL-T, z-index 0.1s;
+    overflow: hidden;
+
+    &.anim-5parts {
+
+      .part {
+        position: absolute;
+        top: 0;
+        width: 20.1%;
+        height: 100%;
+        overflow: hidden;
+        will-change: transform;
+
+        &:before {
+          @include bgPart;
+          top: 0;
+          width: 500%;
+          height: 100%;
+          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-1.jpg');
+        }
+
+        &.part-1 {
+          transition: transform ($RT - 0.4s) $RTDELAY;
+          @include bg1Part(1);
+        }
+        &.part-2 {
+          transition: transform ($RT - 0.4s) ($RTDELAY + 0.2s);
+          @include bg1Part(2);
+        }
+        &.part-3 {
+          transition: transform ($RT - 0.4s) ($RTDELAY + 0.4s);
+          @include bg1Part(3);
+        }
+        &.part-4 {
+          transition: transform ($RT - 0.4s) ($RTDELAY + 0.2s);
+          @include bg1Part(4);
+        }
+        &.part-5 {
+          transition: transform ($RT - 0.4s) $RTDELAY;
+          @include bg1Part(5);
+        }
+
+      }
+
+      .part {
+        transform: translateY(100%);
+      }
+
+    }
+    &.anim-9parts {
+
+      .slider--el-bg {
+        perspective: 2000;
+      }
+
+      .part {
+        position: absolute;
+        width: 33.5%;
+        height: 33.5%;
+        overflow: hidden;
+        will-change: transform;
+        transform-origin: 0% 100%;
+
+        &:before {
+          @include bgPart;
+          width: 300%;
+          height: 300%;
+          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+        }
+
+        &.left-top {
+          @include bg2Part(1,1);
+          @include bg2PartTransition(0.9s, 0.2s);
+        }
+        &.mid-top {
+          @include bg2Part(2,1);
+          @include bg2PartTransition(0.9s, 0.1s);
+        }
+        &.right-top {
+          @include bg2Part(3,1);
+          @include bg2PartTransition(0.9s, 0.2s);
+        }
+        &.left-mid {
+          @include bg2Part(1,2);
+          @include bg2PartTransition(0.9s, 0.3s);
+        }
+        &.mid-mid {
+          @include bg2Part(2,2);
+          @include bg2PartTransition(0.9s, 0s);
+        }
+        &.right-mid {
+          @include bg2Part(3,2);
+          @include bg2PartTransition(0.9s, 0.3s);
+        }
+        &.left-bot {
+          @include bg2Part(1,3);
+          @include bg2PartTransition(0.9s, 0.4s);
+        }
+        &.mid-bot {
+          @include bg2Part(2,3);
+          @include bg2PartTransition(0.9s, 0.5s);
+        }
+        &.right-bot {
+          @include bg2Part(3,3);
+          @include bg2PartTransition(0.9s, 0.4s);
+        }
+      }
+
+      .part {
+        transform: rotateX(90deg);
+        opacity: 0;
+      }
+
+    }
+    &.anim-3parts {
+
+      .part {
+        position: absolute;
+        top: 0;
+        width: 33.5%;
+        height: 100%;
+        overflow: hidden;
+        transition: transform $RT $RTDELAY;
+        will-change: transform;
+
+        &:before {
+          @include bgPart;
+          width: 300%;
+          height: 100%;
+          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-3.jpg');
+        }
+
+        &.left {
+          left: 0;
+
+          &:before {
+            left: 0;
+          }
+        }
+        &.mid {
+          left: (100% / 3);
+
+          &:before {
+            left: -100%;
+          }
+        }
+        &.right {
+          left: (100% / 3) * 2;
+
+          &:before {
+            left: -200%;
+          }
+        }
+
+      }
+
+      .left {
+        transform: translate3D(-100%, -33.333%, 0);
+      }
+      .mid {
+        transform: translate3D(0, 100%, 0);
+      }
+      .right {
+        transform: translate3D(100%, -33.333%, 0);
+      }
+
+    }
+    &.anim-4parts {
+
+      .part {
+        position: absolute;
+        width: 50.2%;
+        height: 50.2%;
+        overflow: hidden;
+        will-change: transform;
+
+        &:before {
+          @include bgPart;
+          width: 200%;
+          height: 200%;
+          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-4.jpg');
+        }
+
+        &.top {
+          top: 0;
+          transition: transform ($RT - 0.2s) $RTDELAY;
+
+          &:before {
+            top: 0;
+          }
+        }
+        &.bot {
+          top: 50%;
+          transition: transform ($RT - 0.2s) ($RTDELAY + 0.2s);
+
+          &:before {
+            top: -100%;
+          }
+        }
+        &.left {
+          left: 0;
+
+          &:before {
+            left: 0;
+          }
+        }
+        &.right {
+          left: 50%;
+
+          &:before {
+            left: -100%;
+          }
+        }
+
+      }
+
+      .left {
+        transform: translateX(-100%);
+      }
+      .right {
+        transform: translateX(100%);
+      }
+
+    }
+
+    &-bg {
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background-size: cover;
+      transition: transform $BG-T $RT;
+      will-change: transform;
+
+      .part:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.15);
+      }
+    }
+
+    &-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20rem;
+      transition: opacity $RTDELAY;
+      opacity: 0;
+    }
+
+    &-heading {
+      font-size: 9rem;
+      font-family: Tesla;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+  }
+}
+
+/* CONTROL */
+@for $i from 1 through 4 {
+  #page#{$i}:checked ~ .slider--el-#{$i} {
+    z-index: 10;
+
+    .slider--el-bg {
+      transform: scale(0.834);
+    }
+
+    .slider--el-content {
+      opacity: 1;
+      transition: opacity $RTDELAY ($RT + $RTDELAY);
+    }
+
+    .part {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+}
+@mixin labelsMixin($left, $right) {
+  &.left .page#{$left}-left {
+    z-index: 5000;
+    transform: scale(1);
+    transition: transform 0s $RTDELAY + $RT + $RTDELAY;
+  }
+&.right .page#{$right}-right {
+    z-index: 5000;
+    transform: scale(1);
+    transition: transform 0s $RTDELAY + $RT + $RTDELAY;
+  }
+}
+#page1:checked ~ .slider--control {
+  @include labelsMixin(4,2);
+}
+#page2:checked ~ .slider--control {
+  @include labelsMixin(1,3);
+}
+#page3:checked ~ .slider--control {
+  @include labelsMixin(2,4);
+}
+#page4:checked ~ .slider--control {
+  @include labelsMixin(3,1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fonts
+$font-header: Montserrat, helvetica;
+$font-nav : "Space Mono", monospace;
+// colors
+$color-dark: #111;
+$color-border: #ccc;
+$color-trans-bg: #ededed;
+// easings
+$ease-cb: cubic-bezier(.4,0,.2,1);
+$ease-cb-2: cubic-bezier(.19,1,.22,1);
+$ease-cb-3: cubic-bezier(.77,0,.175,1);
+$ease-cb-4: cubic-bezier(.99,1,.92,1);
+// padding
+$pad: 3em;
+// mqs
+$mq-med: 54em;
+$mq-large: 65em;
+$mq-xlarge: 91em;
+
+
+//------------------------------
+//  nth-trans-delay()
+//  Transition Delay on nth-childs
+//  @param: $delay_items: number of nth-of-type items to create
+//  @param: $delay_time: transition-dealy value
+//-----------------------------
+@mixin nth-trans-delay($delay_items: 7, $delay_time: 0.2s){
+  @for $i from 1 through $delay_items {
+    &:nth-child(#{$i}) {   
+     transition-delay: $delay_time * $i; 
+    }
+  }
+}
+
+//-------------------------------
+//  Body, prevent scrolling
+//-------------------------------
+body{
+  height: 100%;
+  overflow-y:hidden;
+}
+
+//-------------------------------
+//  Slides Nav
+//-------------------------------
+.slides-nav{
+  z-index: 99;
+  position: fixed;
+  // Grimey, not sure why
+  // 0 isn't working
+  right: -5%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #111;
+  
+  @media (min-width: $mq-med){
+    right: 2%;
+  }
+
+  &__nav{
+    position: relative;
+    right: 0;
+    display: block;
+    font-size: 1em;
+    transform: rotate(90deg);
+    transform-origin: center;
+  }
+
+  button{
+    position: relative;
+    display:inline-block;
+    padding: 0.35em;
+    margin: 0;
+    font-family: $font-nav;
+    appearance: none;
+    background:transparent;
+    border: 0;
+    overflow-x:hidden;
+    transition: color 0.5s ease;
+    
+    &:after{
+      content:'';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height:1px;
+      width: 0;
+      background: $color-dark;
+      transition: width 0.4s ease;
+    }
+    &:hover{
+      cursor:pointer;
+      color: rgba($color-dark, 0.75);
+      transition: color 0.5s ease;
+    }
+    &:hover:after{
+      width:100%;
+      transition: width 0.4s ease;
+    }
+    // Yeah... I know
+    &:focus{
+      outline: 0;
+    }
+  }
+  // If is Sliding, prevent 
+  // double clicks
+  .is-sliding &{
+    pointer-events:none;
+  }
+}
+
+//-------------------------------
+//  Slides
+//-------------------------------
+.slides{
+  position: relative;
+  display: block;
+  height: 100vh;
+  width:100%;
+  background: #fff;
+  transition: 1s $ease-cb-4;
+
+  .is-sliding &{
+    background: $color-trans-bg;
+    transition: 0.3s $ease-cb-4;
+  }
+}
+
+//-------------------------------
+//  Single Slide
+//-------------------------------
+$slide-content-size-sm: 95%;
+$slide-content-size: 80%;
+
+.slide{
+  z-index: -1;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  transition: z-index 1s ease;
+  
+  // Bring active layer to foreground
+  &.is-active{
+    z-index: 19;
+    transition: z-index 1s ease;
+  }
+
+  &__content{
+    position: relative;
+    margin: 0 auto;
+    height: $slide-content-size-sm;
+    width: $slide-content-size-sm;
+    top: (100% - $slide-content-size-sm) / 2;
+    
+    @media (min-width: $mq-med){
+      height: $slide-content-size;
+      width: $slide-content-size;
+      top: (100% - $slide-content-size) / 2;
+    }
+  }
+
+  &__header{
+    z-index: 9;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    transform: translateX(5%);
+    
+    @media (min-width: $mq-med){
+      transform: translateX(-5%);
+    }
+  }
+
+  &__title{
+    font-family: $font-header;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: $color-dark;
+    overflow-y: hidden;
+    
+    @media (min-width: $mq-med){
+      font-size: 5em;
+    }
+     
+    // Slice text animation
+    .title-line{
+      display: block;
+      overflow-y: hidden;
+
+      span{
+        display: inline-block;
+        transform:translate3d(0,140%,0);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.8s ease;
+        @include nth-trans-delay(2, 0.15s);
+      }
+
+      .is-active & span{
+        transform:translate3d(0,0%,0);
+        opacity: 1;
+        transition: transform 0.6s $ease-cb-3, opacity 0.1s ease;
+      }
+      .is-active &:nth-of-type(2n) span{
+        transition-delay:0.2s;
+      }
+    }
+  }
+  
+  // Image wrapper
+  &__figure{
+    z-index: 7;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    //overflow-y: hidden;
+    transition: transform 0.5s $ease-cb-2;
+     
+    // Scale Image
+    .is-sliding &{
+      transform: scale(0.8);
+      transition: transform 0.5s $ease-cb-2;
+    }
+  }
+  &__img{
+    position: relative;
+    display: block;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50%;
+     visibility: hidden;
+     //will-change:height;
+    height: 0%;
+    width: 100%;
+    filter: grayscale(0%);
+    transition: height 1s 1.4s $ease-cb-2, filter 0.4s 0.1s ease;
+      
+    .is-active &{
+      height: 100%;
+      opacity: 1;
+      transition: height .5s .3s $ease-cb-3, filter 0.4s 0.1s ease;
+    }
+    .is-sliding &{
+      filter: grayscale(100%);
+    }
+  }
+}
+
+// new search
